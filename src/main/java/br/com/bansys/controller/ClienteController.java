@@ -84,7 +84,7 @@ public class ClienteController {
 		try {
 			ClienteDAO ClienteDAO = new ClienteDAO();
 			ClienteDAO.excluir(id);
-			return Response.status(Response.Status.NO_CONTENT).build();
+			return Response.status(Response.Status.OK).build();
 		} catch (Exception ex) {
 			Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
