@@ -1,0 +1,47 @@
+<div class="row">
+	<div class="col-md-3">
+		<p>
+			<strong>Agência: </strong>{{agencia.num_agencia}}
+		</p>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<p>
+				<strong>Conta: </strong>{{conta.num_conta}}
+			</p>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<p>
+					<strong>Cliente: </strong>{{cliente.nm_cliente}} &nbsp;
+					{{cliente.sobre_cliente}}
+				</p>
+			</div>
+			<br>
+			<p><strong>Extrato para Conferência</strong></p>
+			<br>
+			
+			<p><strong>Resumo da Conta:</strong> &nbsp; <strong>Data: </strong> {{data atual}}</p>
+			<div id="list" class="row">
+				<div class="table-responsive col-md-12">
+					<table class="table table-striped" cellspacing="0" cellpadding="0">
+						<thead>
+							<tr>
+								<th>Saldo</th>
+								<th>Limite</th>
+								<th>Limite Disponivel</th>
+
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="conta in listaConta">
+
+								<td>{{conta.saldo}}</td>
+								<td>{{conta.limite}}</td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
