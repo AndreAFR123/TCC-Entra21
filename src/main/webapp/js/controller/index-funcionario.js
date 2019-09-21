@@ -1,15 +1,15 @@
 banSys.controller("index-funcionarioController", function($scope, $http) {
 
-	$scope.listaindex-funcionario = [];
-	$scope.index-funcionario= {};
+	$scope.listaindex_funcionario = [];
+	$scope.index_funcionario= {};
 	var urlApi = 'localhost:8080/TCC-Entra21/rest/';
 
-	$scope.listaIndex-funcionario = function() {
+	$scope.listaIndex_funcionario = function() {
 		$http({
 			method : 'GET',
 			url : urlApi + 'index-funcionarios/'
 		}).then(function(response) {
-			$scope.listaIndex-funcionario = response.data;
+			$scope.listaIndex_funcionario = response.data;
 		}, function(response) {
 			console.log('error');
 			console.log(response.data);
@@ -17,7 +17,7 @@ banSys.controller("index-funcionarioController", function($scope, $http) {
 		});
 	};
 	
-	$scope.salvarIndex-funcionario = function() {
+	$scope.salvarIndex_funcionario = function() {
 		var metodo = 'POST';
 
 		if ($scope.index-funcionario.id){
@@ -37,7 +37,7 @@ banSys.controller("index-funcionarioController", function($scope, $http) {
 			console.log(response.status);
 		});
 	};
-	$scope.deleteIndex-funcionario = function(id) {
+	$scope.deleteIndex_funcionario = function(id) {
 
 		$http({
 			method : 'DELETE',
@@ -51,12 +51,12 @@ banSys.controller("index-funcionarioController", function($scope, $http) {
 			console.log(response.status);
 		});
 	};
-	$scope.alterarIndex-funcionario = function(index-funcionario) {
-		$scope.index-funcionario = angular.copy(index-funcionario);
+	$scope.alterarIndex_funcionario = function(index_funcionario) {
+		$scope.index_funcionario = angular.copy(index-funcionario);
 	}
 
-	$scope.cancelarAlteracaoIndex-funcionario = function(index-funcionario) {
-		$scope.index-funcionario = {};
+	$scope.cancelarAlteracaoIndex_funcionario = function(index_funcionario) {
+		$scope.index_funcionario = {};
 	};
 
 });

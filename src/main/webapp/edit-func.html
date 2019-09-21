@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+​
+<head>
+    <!-- Imports Bootstrap -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./bootstrap/css/style.css" rel="stylesheet">
+​
+    <!-- Imports Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+​
+    <script src="./js/controller/main-controller.js"></script>
+    <script src="./js/controller/cad-func-controller.js"></script>
+​
+    <meta charset="UTF-8">
+    <title>BanSys</title>
+</head>
+​
+<body ng-controller="mainController">
+​
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/TCC-Entra21/">BanSys</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/TCC-Entra21/">In&iacute;cio</a></li>
+                    <li><a href="#">Ajuda</a></li>
+                    <li><a href="index.html">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br><br><br><br>
+    <div class="container">
+        <h1>Editar Funcionário</h1>
+        <br>
+        <form action="index.html">
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="nm-funcionario">Nome: </label>
+                    <input type="nome" class="form-control" id="nm-funcionario" placeholder="Digite o Nome">
+                </div>
+​
+                <div class="form-group col-md-4">
+                    <label for="sobre-funcionario">Sobrenome: </label>
+                    <input type="sobrenome" class="form-control" id="sobre-funcionario"
+                        placeholder="Digite o Sobrenome">
+                </div>
+​
+                <div class="form-group col-md-4">
+                    <label for="cpf-funcionario">CPF: </label>
+                    <input type="cpf" class="form-control" id="cpf-funcionario" placeholder="Digite o CPF">
+                </div>
+            </div>
+​            <hr>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="end-funcionario">Endereço: </label>
+                    <input type="endereco" class="form-control" id="end-funcionario" placeholder="Digite o Endereço">
+                </div>
+​
+                <div class="form-group col-md-4"></div>
+​
+                <div class="form-group col-md-4">
+                    <label for="tel-funcionario">Telefone: </label>
+                    <input type="telefone" class="form-control" id="tel-funcionario" placeholder="Digite o Telefone">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="funcao-funcionario">Função: </label>
+                    <input type="funcao" class="form-control" id="funcao-funcionario" placeholder="Digite a Função">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="sal-funcionario">Salário: </label>
+                    <input type="salario" class="form-control" id="sal-funcionario" placeholder="Digite o Salário">
+                </div>
+                <div class="form-group col-md-3"></div>
+                <div class="form-group col-md-3">
+                    <label for="cargah-funcionario">Carga Horária: </label>
+                    <input type="cargah" class="form-control" id="cargah-funcionario"
+                        placeholder="Digite a Carga Horária">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label for="email-funcionario">Email: </label>
+                    <input type="email" class="form-control" id="email-funcionario" placeholder="Digite o Email">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="login-funcionario">Login: </label>
+                    <input type="login" class="form-control" id="login-funcionario" placeholder="Digite o Login">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="senha-funcionario">Senha: </label>
+                    <input type="senha" class="form-control" id="senha-funcionario" placeholder="Digite a Senha">
+                </div>
+​
+                <div class="form-group col-md-4">
+                    <label for="senha-funcionario">Confirme a Senha: </label>
+                    <input type="senha" class="form-control" id="senha-funcionario"
+                        placeholder="Digite a Senha Novamente">
+                </div>
+            </div>
+​            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <a href="index.html" class="btn btn-default">Cancelar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+​
+</html>

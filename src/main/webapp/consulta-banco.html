@@ -1,0 +1,43 @@
+<br>
+<input type="text" ng-model="banco.id" style="width:22px;">
+<input type="text" ng-model="banco.nome">
+<input type="text" ng-model="banco.cpf">
+<input type="text" ng-model="banco.numero">
+<input type="button" value="Salvar" ng-click="salvarBanco()">
+<input type="button" value="Desfazer" ng-click="cancelarAlteracaoBanco()">
+
+<br>
+<br>
+<input type="button" value="Pesquisar" ng-click="listarBanco()">
+<br>
+<br>
+<div id="list" class="row">
+    <div class="table-responsive col-md-12">
+        <table class="table table-striped" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Numero</th>
+                    <th>Agência</th>
+                    <th class="actions">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="banco in listaBanco">
+                    <td>{{banco.id}}</td>
+                    <td>{{banco.nome}}</td>
+                    <td>{{banco.cpf}}</td>
+                    <td>{{banco.numero}}</td>
+                    <td class="actions"><a class="btn btn-success btn-xs"
+                        href="bancos/{{banco.id}}">Visualizar</a><a 
+                        class="btn btn-warning btn-xs" href="edit-banco.html" 
+                        ng-click="alterarBanco(banco)">Editar</a><a 
+                        class="btn btn-danger btn-xs" href="#" data-toggle="modal"
+                        data-target="#delete-modal" ng-click="deleteBanco(banco.id)">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<br>
+<input type="text" ng-model="funcionario.id" style="width:22px;">
+<input type="text" ng-model="funcionario.nome">
+<input type="text" ng-model="funcionario.sobrenome">
+<input type="text" ng-model="funcionario.cpf">
+<input type="text" ng-model="funcionario.endereco">
+<input type="text" ng-model="funcionario.telefone">
+<input type="text" ng-model="funcionario.funcao">
+<input type="text" ng-model="funcionario.salario">
+<input type="text" ng-model="funcionario.cargah">
+<input type="text" ng-model="funcionario.email">
+<input type="text" ng-model="funcionario.login">
+<input type="text" ng-model="funcionario.senha">
+<input type="button" value="Salvar" ng-click="salvarFuncionario()">
+<input type="button" value="Desfazer" ng-click="cancelarAlteracaoFuncionario()">
+
+<br>
+<br>
+<input type="button" value="Pesquisar" ng-click="listarFuncionario()">
+<br>
+<br>
+<div id="list" class="row">
+    <div class="table-responsive col-md-12">
+        <table class="table table-striped" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>CPF</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                    <th>Função</th>
+                    <th>Salário</th>
+                    <th>Carga Horária</th>
+                    <th>Email</th>
+                    <th>Login</th>
+                    <th>Senha</th>
+                    <th class="actions">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="funcionario in listaFuncionario">
+                    <td>{{funcionario.id}}</td>
+                    <td>{{funcionario.nome}}</td>
+                    <td>{{funcionario.sobrenome}}</td>
+                    <td>{{funcionario.cpf}}</td>
+                    <td>{{funcionario.numero}}</td>
+                    <td class="actions"><a class="btn btn-success btn-xs"
+                        href="funcionario/{{funcionario.id}}">Visualizar</a><a 
+                        class="btn btn-warning btn-xs" href="edit-func.html" 
+                        ng-click="alterarFuncionario(funcionario)">Editar</a><a 
+                        class="btn btn-danger btn-xs" href="#" data-toggle="modal"
+                        data-target="#delete-modal" ng-click="deleteFuncionario(funcionario.id)">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

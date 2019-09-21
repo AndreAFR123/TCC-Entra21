@@ -1,15 +1,15 @@
 banSys.controller("index-clienteController", function($scope, $http) {
 
-	$scope.listaIndex-cliente = [];
-	$scope.index-cliente= {};
+	$scope.listaIndex_cliente = [];
+	$scope.index_cliente= {};
 	var urlApi = 'localhost:8080/TCC-Entra21/rest/';
 
-	$scope.listaindex-cliente = function() {
+	$scope.listaindex_cliente = function() {
 		$http({
 			method : 'GET',
 			url : urlApi + 'index-clientes/'
 		}).then(function(response) {
-			$scope.listaIndex-cliente = response.data;
+			$scope.listaIndex_cliente = response.data;
 		}, function(response) {
 			console.log('error');
 			console.log(response.data);
@@ -17,7 +17,7 @@ banSys.controller("index-clienteController", function($scope, $http) {
 		});
 	};
 	
-	$scope.salvarIndex-cliente = function() {
+	$scope.salvarIndex_cliente = function() {
 		var metodo = 'POST';
 
 		if ($scope.index-cliente.id){
@@ -37,7 +37,7 @@ banSys.controller("index-clienteController", function($scope, $http) {
 			console.log(response.status);
 		});
 	};
-	$scope.deleteIndex-cliente = function(id) {
+	$scope.deleteIndex_cliente = function(id) {
 
 		$http({
 			method : 'DELETE',
@@ -51,12 +51,12 @@ banSys.controller("index-clienteController", function($scope, $http) {
 			console.log(response.status);
 		});
 	};
-	$scope.alterarIndex-cliente = function(index-cliente) {
-		$scope.index-cliente = angular.copy(index-cliente);
+	$scope.alterarIndex_cliente = function(index_cliente) {
+		$scope.index_cliente = angular.copy(index-cliente);
 	}
 
-	$scope.cancelarAlteracaoIndex-cliente = function(index-cliente) {
-		$scope.index-cliente = {};
+	$scope.cancelarAlteracaoIndex_cliente = function(index_cliente) {
+		$scope.index_cliente = {};
 	};
 
 });

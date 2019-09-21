@@ -1,0 +1,43 @@
+<br>
+<input type="text" ng-model="cliente.id" style="width:22px;">
+<input type="text" ng-model="cliente.nome">
+<input type="text" ng-model="cliente.cpf">
+<input type="text" ng-model="cliente.numero">
+<input type="button" value="Salvar" ng-click="salvarCliente()">
+<input type="button" value="Desfazer" ng-click="cancelarAlteracaoCliente()">
+
+<br>
+<br>
+<input type="button" value="Pesquisar" ng-click="listarCliente()">
+<br>
+<br>
+<div id="list" class="row">
+    <div class="table-responsive col-md-12">
+        <table class="table table-striped" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Numero</th>
+                    <th class="actions">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="cliente in listaCliente">
+                    <td>{{cliente.id}}</td>
+                    <td>{{cliente.nome}}</td>
+                    <td>{{cliente.cpf}}</td>
+                    <td>{{cliente.numero}}</td>
+                    <td class="actions"><a class="btn btn-success btn-xs"
+                        href="clientes/{{cliente.id}}">Visualizar</a><a 
+                        class="btn btn-warning btn-xs" href="edit-cliente" 
+                        ng-click="alterarCliente(cliente)">Editar</a><a 
+                        class="btn btn-danger btn-xs" href="#" data-toggle="modal"
+                        data-target="#delete-modal" ng-click="deleteCliente(cliente.id)">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
