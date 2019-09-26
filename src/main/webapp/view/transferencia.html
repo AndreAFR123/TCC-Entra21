@@ -1,22 +1,24 @@
 <meta charset="utf-8">
-	<div class="container" align="center">
+	<div class="container"  >
 		<form>
 			<div class="row">
-				<div class="form-group col-md-4"></div>
-
+				
 				<div class="form-group col-md-4">
-					<label for="deposito">Valor do Depósito: </label> <input type="deposito"
-						class="form-control" id="deposito"
-						placeholder="Digite o Valor do Depósito">
+					<label for="transferencia">Valor da transferência: </label> <input type="transferencia"
+						class="form-control" id="transferencia"
+						placeholder="Digite o Valor a ser transferido">
 
 				</div>
-				<div class="form-group col-md-4"></div>
+				<div class="form-group col-md-4">
+				<label for="num-conta">Número da Conta: </label> <input type="num-conta"
+						class="form-control" id="num-conta"
+						placeholder="Digite o número da conta"></div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
 					<button type="submit" style="margin-right: 40px;"
 						href="#" data-toggle="modal" data-target="#confirma2-modal" class="btn btn-primary">Confirma</button>
-					<a href="index-cliente.html" class="btn btn-default">Cancelar</a>
+					<a href="index.html" class="btn btn-default">Cancelar</a>
 				</div>
 				</div>
 		</form>
@@ -30,7 +32,7 @@
         <h4 class="modal-title" id="modalLabel">Confirma</h4>
       </div>
       <div class="modal-body">
-        Deseja realmente Depositar?
+        Deseja realmente Transferir?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Sim</button>

@@ -3,7 +3,10 @@ var banSys = angular.module("banSys", ['ngRoute']);
 banSys.config(function($routeProvider, $locationProvider){
     
 	$routeProvider
-    .when("/extratos",{templateUrl:'view/extrato.html', controller:'extratoController'})    
+    .when("/extratos",{templateUrl:'view/extrato.html', controller:'extratoController'})
+    .when("/dados-contas",{templateUrl:'view/consulta-conta.html', controller:'contaController'})
+    .when("/transferencias",{templateUrl:'view/transferencia.html', controller:'contaController'})
+    .when("/depositos",{templateUrl:'view/deposito.html', controller:'depositoController'})
     
     
     
