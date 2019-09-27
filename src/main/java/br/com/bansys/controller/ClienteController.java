@@ -50,10 +50,22 @@ public class ClienteController {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("{num_conta}/")
-	public Cliente getConsulta(@PathParam("num_conta") int num_conta) {
+	public Cliente getExtrato(@PathParam("num_conta") int num_conta) {
 		try {
 			ClienteDAO ClienteDAO = new ClienteDAO();
 			return ClienteDAO.selecionar(num_conta);
+		} catch (Exception ex) {
+			Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+		}
+	}
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("{cpf_cliente}/")
+	public Cliente getConsulta(@PathParam("cpf_cliente") int cpf_cliente) {
+		try {
+			ClienteDAO ClienteDAO = new ClienteDAO();
+			return ClienteDAO.selecionar(cpf_cliente);
 		} catch (Exception ex) {
 			Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);

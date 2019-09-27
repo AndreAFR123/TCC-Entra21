@@ -109,12 +109,29 @@ public class ClienteDAO {
 
 		return null;
 	}
-	public Cliente consultar(int num_conta) throws SQLException, ClassNotFoundException {
+	public Cliente extrato(int num_conta) throws SQLException, ClassNotFoundException {
 		String sqlQuery = "SELECT * FROM cliente INNER JOIN conta ON idConta = fk_cliente_conta WHERE num_conta = ?";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
 			stmt.setInt(1, num_conta);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs.next()) {
+				return parser(rs);
+			}
+		} catch (SQLException e) {
+			throw e;
+		}
+
+		return null;
+	}
+	public Cliente consulta(int cpf_cliente) throws SQLException, ClassNotFoundException {
+		String sqlQuery = "SELECT * FROM cliente WHERE cpf_cliente = ?";
+
+		try {
+			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
+			stmt.setInt(1, cpf_cliente);
 			ResultSet rs = stmt.executeQuery();
 
 			if (rs.next()) {
