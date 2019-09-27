@@ -18,6 +18,10 @@ banSys.controller("clienteController", function($scope, $http) {
 		});
 	};
 	
+	$scope.esconderImagem = function(){
+		document.getElementById('img-fundo').style.display = "none";
+		
+	}
 	$scope.salvarCliente = function() {
 		var metodo = 'POST';
 
