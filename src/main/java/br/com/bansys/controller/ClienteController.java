@@ -47,6 +47,18 @@ public class ClienteController {
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("{num_conta}/")
+	public Cliente getConsulta(@PathParam("num_conta") int num_conta) {
+		try {
+			ClienteDAO ClienteDAO = new ClienteDAO();
+			return ClienteDAO.selecionar(num_conta);
+		} catch (Exception ex) {
+			Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+		}
+	}
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)

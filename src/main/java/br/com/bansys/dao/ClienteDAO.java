@@ -109,6 +109,23 @@ public class ClienteDAO {
 
 		return null;
 	}
+	public Cliente consultar(int num_conta) throws SQLException, ClassNotFoundException {
+		String sqlQuery = "SELECT * FROM cliente INNER JOIN conta ON idConta = fk_cliente_conta WHERE num_conta = ?";
+
+		try {
+			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
+			stmt.setInt(1, num_conta);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs.next()) {
+				return parser(rs);
+			}
+		} catch (SQLException e) {
+			throw e;
+		}
+
+		return null;
+	}
 
 	public List<Cliente> listar() throws SQLException, ClassNotFoundException {
 		String sqlQuery = "SELECT * FROM cliente ORDER BY idcliente";
