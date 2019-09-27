@@ -46,7 +46,7 @@ banSys.controller("agenciaController", function($scope, $http) {
 			$scope.listaAgencia.splice(id, 1);
 			$scope.listaAgencia();
 		}, function(response) {
-			console.log('error do salvar');
+			console.log('error do delete');
 			console.log(response.data);
 			console.log(response.status);
 		});

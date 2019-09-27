@@ -7,7 +7,7 @@ banSys.controller("funcController", function($scope, $http) {
 	$scope.listaFunc = function() {
 		$http({
 			method : 'GET',
-			url : urlApi + 'funcs/'
+			url : urlApi + 'funcionarios/'
 		}).then(function(response) {
 			$scope.listaFunc = response.data;
 		}, function(response) {
@@ -26,7 +26,7 @@ banSys.controller("funcController", function($scope, $http) {
 
 		$http({
 			method : metodo,
-			url : urlApi + 'funcs/',
+			url : urlApi + 'funcionarios/',
 			data : $scope.func
 		}).then(function(response) {
 			$scope.listaFunc.push(response.data);
@@ -41,12 +41,12 @@ banSys.controller("funcController", function($scope, $http) {
 
 		$http({
 			method : 'DELETE',
-			url : urlApi + 'funcs/' + id
+			url : urlApi + 'funcionarios/' + id
 		}).then(function(response) {
 			$scope.listaFunc.splice(id, 1);
 			$scope.listaFunc();
 		}, function(response) {
-			console.log('error do salvar');
+			console.log('error do delete');
 			console.log(response.data);
 			console.log(response.status);
 		});
