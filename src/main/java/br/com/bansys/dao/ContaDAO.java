@@ -64,6 +64,48 @@ public class ContaDAO {
 		return linhasAfetadas;
 	}
 	
+	public void Transferencia(double saldo_conta, int id, double saldo, int num) throws SQLException, ClassNotFoundException {
+		String sqlQuery = "UPDATE conta SET saldo_conta = saldo_conta - ? WHERE idConta = ? ";
+		String sql = "UPDATE conta SET saldo_conta = saldo_conta + ? WHERE num_Conta = ?";
+		
+		try {
+			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
+			stmt.setDouble(1, saldo_conta);
+			stmt.setInt(2, id);
+			stmt.executeUpdate();
+			
+			PreparedStatement stmt2 = this.conexao.getConnection().prepareStatement(sql);
+			stmt2.setDouble(1, saldo);
+			stmt2.setInt(2, num);
+			stmt2.executeUpdate();
+			
+			this.conexao.commit();
+			
+		} catch (SQLException e) {
+			this.conexao.rollback();
+			throw e;
+		}
+	}
+	
+
+    public int Emprestimo(double saldo_conta, double emprestimo_conta, int id) throws SQLException, ClassNotFoundException {
+        String sqlQuery = "UPDATE conta SET Saldo_conta = Saldo_conta + ?, emprestimo_conta = emprestimo_conta - ? WHERE idConta = ?";
+        int linhasAfetadas = 0;
+        try {
+            PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
+            stmt.setDouble(1, saldo_conta);
+            stmt.setDouble(2, emprestimo_conta);
+            stmt.setInt(3, id);
+            
+            linhasAfetadas = stmt.executeUpdate();
+            this.conexao.commit();
+        } catch (SQLException e) {
+            this.conexao.rollback();
+            throw e;
+        }
+        return linhasAfetadas;
+    }
+	
 	public int excluir(int idConta) throws SQLException, ClassNotFoundException {
 		int linhasAlfetadas = 0;
 		String sqlQuery = "DELETE FROM conta WHERE idConta = ?";

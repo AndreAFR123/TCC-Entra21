@@ -79,6 +79,33 @@ public class ContaController {
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
+	@PUT
+	   @Consumes(MediaType.APPLICATION_JSON)
+	   @Path("{id}/{saldo_conta}/{saldo}/{num}")
+	   public Response Transferencia(@PathParam("id") int id, @PathParam("saldo_conta")double saldo_conta, @PathParam("saldo")double saldo, @PathParam("num")int num) {
+	       try {
+	           ContaDAO ContaDAO = new ContaDAO();
+	           ContaDAO.Transferencia(saldo_conta, id, saldo, num);
+	           return Response.status(Response.Status.OK).build();
+	       } catch (Exception ex) {
+	           Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
+	           throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+	       }
+	   }
+	   @PUT
+	   @Consumes(MediaType.APPLICATION_JSON)
+	   @Path("{id}/{saldo_conta}/{emprestimo_conta}")
+	   public Response Emprestimo(@PathParam("id") int id, @PathParam("saldo_conta") double saldo_conta, @PathParam("emprestimo_conta") double emprestimo_conta) {
+	       try {
+	           ContaDAO ContaDAO = new ContaDAO();
+	           ContaDAO.Emprestimo(saldo_conta,emprestimo_conta, id);
+	           return Response.status(Response.Status.OK).build();
+	       } catch (Exception ex) {
+	           Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
+	           throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+	       }
+	   }
+	
 	
 	@DELETE
 	@Path("{id}/")
