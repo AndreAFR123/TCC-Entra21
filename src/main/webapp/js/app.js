@@ -24,6 +24,9 @@ banSys.config(function($routeProvider, $locationProvider){
     .when("/dado-agencia",{templateUrl:'view/consulta-agencia.html', controller:'agenciaController'})
     .when("/edit-agencia",{templateUrl:'view/edit-agencia.html', controller:'agenciaController'})
     
+     
+    
+    
     
     
     
