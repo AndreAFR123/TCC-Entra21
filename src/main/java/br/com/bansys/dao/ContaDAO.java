@@ -105,6 +105,38 @@ public class ContaDAO {
         }
         return linhasAfetadas;
     }
+    public int Saque(double saldo_conta, int idConta) throws SQLException, ClassNotFoundException {
+        String sqlQuery = "UPDATE conta SET Saldo_conta = (saldo_conta - ?) WHERE idConta = ?";
+        int linhasAfetadas = 0;
+        try {
+            PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
+            stmt.setDouble(1, saldo_conta);
+            stmt.setInt(2, idConta);          
+            stmt.executeUpdate();
+            this.conexao.commit();
+        } catch (SQLException e) {
+            this.conexao.rollback();
+            throw e;
+        }
+        return linhasAfetadas;
+    }
+    public int Deposito(double saldo_conta, int idConta) throws SQLException, ClassNotFoundException {
+        String sqlQuery = "UPDATE conta SET Saldo_conta = (Saldo_conta + ?) WHERE idConta = ?";
+        int linhasAfetadas = 0;
+        try {
+            PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
+            stmt.setDouble(1, saldo_conta);
+            stmt.setInt(2, idConta);
+            
+           
+            stmt.executeUpdate();
+            this.conexao.commit();
+        } catch (SQLException e) {
+            this.conexao.rollback();
+            throw e;
+        }
+        return linhasAfetadas;
+    }
 	
 	public int excluir(int idConta) throws SQLException, ClassNotFoundException {
 		int linhasAlfetadas = 0;

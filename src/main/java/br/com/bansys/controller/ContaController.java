@@ -105,6 +105,32 @@ public class ContaController {
 	           throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 	       }
 	   }
+	   @PUT
+	    @Consumes(MediaType.APPLICATION_JSON)
+	    @Path("saque/{id}/{saldo_conta}/")
+	    public Response saque(@PathParam("saldo_conta") double saldo_conta, @PathParam("id") int id) {
+	        try {
+	            ContaDAO ContaDAO = new ContaDAO();
+	            ContaDAO.Saque(saldo_conta, id);
+	            return Response.status(Response.Status.OK).build();
+	        } catch (Exception ex) {
+	            Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
+	            throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+	        }
+	    }
+	   @PUT
+	    @Consumes(MediaType.APPLICATION_JSON)
+	    @Path("deposito/{id}/{saldo_conta}/")
+	    public Response deposito(@PathParam("saldo_conta") double saldo_conta, @PathParam("id") int id) {
+	        try {
+	            ContaDAO ContaDAO = new ContaDAO();
+	            ContaDAO.Deposito(saldo_conta, id);
+	            return Response.status(Response.Status.OK).build();
+	        } catch (Exception ex) {
+	            Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
+	            throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+	        }
+	    }
 	
 	
 	@DELETE
