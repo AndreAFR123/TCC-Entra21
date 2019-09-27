@@ -57,6 +57,6 @@ banSys.controller("funcController", function($scope, $http) {
 
 	$scope.cancelarAlteracaoFunc = function(func) {
 		$scope.func = {};
-	};
+	};	
 
 });
