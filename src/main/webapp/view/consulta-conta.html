@@ -1,9 +1,9 @@
 <br>
-<input type="text" ng-model="conta.id" style="width:22px;">
-<input type="text" ng-model="conta.saldo">
-<input type="text" ng-model="conta.limite">
-<input type="text" ng-model="conta.tipoConta">
-<input type="text" ng-model="conta.numero">
+<input type="text" ng-model="conta.idConta" style="width:22px;">
+<input type="text" ng-model="conta.saldo_conta">
+<input type="text" ng-model="conta.limite_conta">
+<input type="text" ng-model="conta.tp_conta">
+<input type="text" ng-model="conta.num_conta">
 <input type="button" value="Salvar" ng-click="salvarConta()">
 <input type="button" value="Desfazer" ng-click="cancelarAlteracaoConta()">
 
@@ -22,22 +22,24 @@
                     <th>Limite</th>
                     <th>Tipo da Conta</th>
                     <th>Número</th>
+                    <th>Emprestimo</th>
                     <th class="actions">Ações</th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="conta in listaConta">
-                    <td>{{conta.id}}</td>
-                    <td>{{conta.saldo}}</td>
-                    <td>{{conta.limite}}</td>
-                    <td>{{conta.tipoConta}}</td>
-                    <td>{{conta.numero}}</td>
+                    <td>{{conta.idConta}}</td>
+                    <td>{{conta.saldo_conta}}</td>
+                    <td>{{conta.limite_conta}}</td>
+                    <td>{{conta.tp_conta}}</td>
+                    <td>{{conta.num_conta}}</td>
+                    <td>{{conta.emprestimo_conta}}
                     <td class="actions"><a class="btn btn-success btn-xs"
-                        href="conta/{{conta.id}}">Visualizar</a><a 
+                        href="conta/{{conta.idConta}}">Visualizar</a><a 
                         class="btn btn-warning btn-xs" href="edit-conta.html" 
                         ng-click="alterarConta(conta)">Editar</a><a 
                         class="btn btn-danger btn-xs" href="#" data-toggle="modal"
-                        data-target="#delete-modal" ng-click="deleteConta(conta.id)">Excluir</a>
+                        data-target="#delete-modal" ng-click="deleteConta(conta.idConta)">Excluir</a>
                     </td>
                 </tr>
             </tbody>
