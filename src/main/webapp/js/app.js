@@ -3,11 +3,11 @@ var banSys = angular.module("banSys", ['ngRoute']);
 banSys.config(function($routeProvider, $locationProvider){
     
 	$routeProvider
-    .when("/extratos",{templateUrl:'view/extrato.html', controller:'extratoController'})
+    .when("/extratos",{templateUrl:'view/extrato.html', controller:'contaController'})
     .when("/dados-contas",{templateUrl:'view/consulta-conta.html', controller:'contaController'})
     .when("/transferencias",{templateUrl:'view/transferencia.html', controller:'contaController'})
-    .when("/depositos",{templateUrl:'view/deposito.html', controller:'depositoController'})
-    .when("/emprestimos",{templateUrl:'view/emprestimo.html', controller:'8888888'})
+    .when("/depositos",{templateUrl:'view/deposito.html', controller:'contaController'})
+    .when("/emprestimos",{templateUrl:'view/emprestimo.html', controller:'contaController'})
     
     .when("/novas-contas",{templateUrl:'view/add-conta.html', controller:'contaController'})
     .when("/edits-contas",{templateUrl:'view/edit-conta.html', controller:'contaController'})
@@ -23,6 +23,10 @@ banSys.config(function($routeProvider, $locationProvider){
     .when("/nova-agencia",{templateUrl:'view/add-agencia.html', controller:'agenciaController'})
     .when("/dado-agencia",{templateUrl:'view/consulta-agencia.html', controller:'agenciaController'})
     .when("/edit-agencia",{templateUrl:'view/edit-agencia.html', controller:'agenciaController'})
+    
+    .when("/novo-banco",{templateUrl:'view/add-banco.html', controller:'bancoController'})
+    .when("/dado-banco",{templateUrl:'view/consulta-banco.html', controller:'bancoController'})
+    .when("/edit-banco",{templateUrl:'view/edit-banco.html', controller:'bancoController'})
     
      
     
