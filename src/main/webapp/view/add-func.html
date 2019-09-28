@@ -1,104 +1,132 @@
 <meta charset="utf-8">
-    <div class="container">
-        <h1>Cadastro FuncionÃ¡rio</h1>
-        <br>
-        <form>
-            <div class="row">
-                <div class="form-group col-md-4">
-                    <label for="nm-funcionario">Nome: </label>
-                    <input type="nome" class="form-control" id="nm-funcionario" placeholder="Digite o Nome">
-                </div>
+<div class="container">
+	<h1>Cadastro FuncionÃ¡rio</h1>
+	<br>
+	<form>
+		<div class="row">
+			<div class="form-group col-md-4">
+				<label for="nm-funcionario">Nome: </label> <input type="nome"
+					class="form-control" id="nm-funcionario"
+					placeholder="Digite o Nome" ng-model="funcionario.nm_funcionario">
+			</div>
 
-                <div class="form-group col-md-4">
-                    <label for="sobre-funcionario">Sobrenome: </label>
-                    <input type="sobrenome" class="form-control" id="sobre-funcionario"
-                        placeholder="Digite o Sobrenome">
-                </div>
+			<div class="form-group col-md-4">
+				<label for="sobre-funcionario">Sobrenome: </label> <input
+					type="sobrenome" class="form-control" id="sobre-funcionario"
+					placeholder="Digite o Sobrenome" ng-model="funcionario.sobre_funcionario">
+			</div>
 
-                <div class="form-group col-md-4">
-                    <label for="cpf-funcionario">CPF: </label>
-                    <input type="cpf" class="form-control" id="cpf-funcionario" placeholder="Digite o CPF">
-                </div>
-            </div>
-         <hr>
-            <div class="row">
-                <div class="form-group col-md-4">
-                    <label for="end-funcionario">EndereÃ§o: </label>
-                    <input type="endereco" class="form-control" id="end-funcionario" placeholder="Digite o EndereÃ§o">
-                </div>
+			<div class="form-group col-md-4">
+				<label for="cpf-funcionario">CPF: </label> <input type="cpf"
+					class="form-control" id="cpf-funcionario"
+					placeholder="Digite o CPF" ng-model="funcionario.cpf_funcionario">
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="form-group col-md-4">
+				<label for="end-funcionario">EndereÃ§o: </label> <input
+					type="endereco" class="form-control" id="end-funcionario"
+					placeholder="Digite o EndereÃ§o" ng-model="funcionario.end_funcionario">
+			</div>
 
-                <div class="form-group col-md-4"></div>
+			<div class="form-group col-md-4">
+				<label for="pis-funcionario">PIS: </label> <input
+					type="pis" class="form-control" id="pis-funcionario"
+					placeholder="Digite o PIS" ng-model="funcionario.pis_funcionario">
+			</div>
 
-                <div class="form-group col-md-4">
-                    <label for="tel-funcionario">Telefone: </label>
-                    <input type="telefone" class="form-control" id="tel-funcionario" placeholder="Digite o Telefone">
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="form-group col-md-3">
-                    <label for="funcao-funcionario">FunÃ§Ã£o: </label>
-                    <input type="funcao" class="form-control" id="funcao-funcionario" placeholder="Digite a FunÃ§Ã£o">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="sal-funcionario">SalÃ¡rio: </label>
-                    <input type="salario" class="form-control" id="sal-funcionario" placeholder="Digite o SalÃ¡rio">
-                </div>
-                <div class="form-group col-md-3"></div>
-                <div class="form-group col-md-3">
-                    <label for="cargah-funcionario">Carga HorÃ¡ria: </label>
-                    <input type="cargah" class="form-control" id="cargah-funcionario"
-                        placeholder="Digite a Carga HorÃ¡ria">
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="form-group col-md-12">
-                    <label for="email-funcionario">Email: </label>
-                    <input type="email" class="form-control" id="email-funcionario" placeholder="Digite o Email">
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="form-group col-md-4">
-                    <label for="login-funcionario">Login: </label>
-                    <input type="login" class="form-control" id="login-funcionario" placeholder="Digite o Login">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="senha-funcionario">Senha: </label>
-                    <input type="senha" class="form-control" id="senha-funcionario" placeholder="Digite a Senha">
-                </div>
+			<div class="form-group col-md-4">
+				<label for="tel-funcionario">Telefone: </label> <input
+					type="telefone" class="form-control" id="tel-funcionario"
+					placeholder="Digite o Telefone" ng-model="funcionario.tel_funcionario">
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="form-group col-md-3">
+				<label for="funcao-funcionario">FunÃ§Ã£o: </label> <input
+					type="funcao" class="form-control" id="funcao-funcionario"
+					placeholder="Digite a FunÃ§Ã£o" ng-model="funcionario.funcao_funcionario">
+			</div>
+			<div class="form-group col-md-3">
+				<label for="sal-funcionario">SalÃ¡rio: </label> <input
+					type="salario" class="form-control" id="sal-funcionario"
+					placeholder="Digite o SalÃ¡rio" ng-model="funcionario.sal_funcionario">
+			</div>
+			<div class="form-group col-md-3"></div>
+			<div class="form-group col-md-3">
+				<label for="cargah-funcionario">Carga HorÃ¡ria: </label> <input
+					type="cargah" class="form-control" id="cargah-funcionario"
+					placeholder="Digite a Carga HorÃ¡ria" ng-model="funcionario.cargah_funcionario">
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="form-group col-md-3">
+			<div class="form-group col-md-6">
+				<label for="email-funcionario">Email: </label> <input type="email"
+					class="form-control" id="email-funcionario"
+					placeholder="Digite o Email" ng-model="funcionario.email_funcionario">
+			</div>
+			<div class="form-group col-md-3">
+		</div>
+		<hr>
+		<div class="row">
+			<div class="form-group col-md-4">
+				<label for="login-funcionario">Login: </label> <input type="login"
+					class="form-control" id="login-funcionario"
+					placeholder="Digite o Login" ng-model="funcionario.login_funcionario">
+			</div>
+			<div class="form-group col-md-4">
+				<label for="senha-funcionario">Senha: </label> <input type="senha"
+					class="form-control" id="senha-funcionario"
+					placeholder="Digite a Senha" ng-model="funcionario.senha_funcionario">
+			</div>
 
-                <div class="form-group col-md-4">
-                    <label for="senha-funcionario">Confirme a Senha: </label>
-                    <input type="senha" class="form-control" id="senha-funcionario"
-                        placeholder="Digite a Senha Novamente">
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-12">
-                    <button type="submit" href="#" data-toggle="modal" data-target="#confirma-modal" class="btn btn-primary">Salvar</button>
-                    <a href="javascript:window.history.go(-1)" class="btn btn-default">Cancelar</a>
-                </div>
-            </div>
-        </form>
-    </div>
-    <!-- Modal -->
-<div class="modal fade" id="confirma-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="modalLabel">Salvar</h4>
-      </div>
-      <div class="modal-body">
-        Deseja realmente adicionar um novo funcionário?
-      </div>
-      <div class="modal-footer">
-        <button type="button" ng-click="salvarFunc()" class="btn btn-primary">Sim</button>
-	<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
-      </div>
-    </div>
-  </div>
+			<div class="form-group col-md-4">
+				<label for="senha-funcionario">Confirme a Senha: </label> <input
+					type="senha" class="form-control" id="senha-funcionario"
+					placeholder="Digite a Senha Novamente" ng-model="funcionario.senha_funcionario">
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="form-group col-md-4">
+				<label for="fk-funcionario-agencia">Código da Agencia: </label> <input type="fk"
+					class="form-control" id="fk-funcionario-agencia"
+					placeholder="Digite o Codigo da Agencia" ng-model="funcionario.fk_funcionario_agencia">
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-12">
+				<button type="submit" href="#" data-toggle="modal"
+					data-target="#confirma-modal" class="btn btn-primary">Salvar</button>
+				<a href="javascript:window.history.go(-1)" class="btn btn-default">Cancelar</a>
+			</div>
+		</div>
+	</form>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="confirma-modal" tabindex="-1" role="dialog"
+	aria-labelledby="modalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Fechar">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="modalLabel">Salvar</h4>
+			</div>
+			<div class="modal-body">Deseja realmente adicionar um novo
+				funcionário?</div>
+			<div class="modal-footer">
+				<button type="button" ng-click="salvarFunc()"
+					class="btn btn-primary">Sim</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
+			</div>
+		</div>
+	</div>
 </div>

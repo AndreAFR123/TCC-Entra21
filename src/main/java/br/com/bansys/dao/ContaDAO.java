@@ -172,7 +172,7 @@ public class ContaDAO {
 
 		return null;
 	}
-	public Conta consultar(int num_conta) throws SQLException, ClassNotFoundException {
+	public Conta consulta(int num_conta) throws SQLException, ClassNotFoundException {
 		String sqlQuery = "SELECT * FROM conta WHERE num_conta= ?";
 
 		try {
