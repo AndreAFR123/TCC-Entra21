@@ -1,5 +1,5 @@
 
-
+<meta charset="utf-8">
     <div class="container">
         <h1>Editar Agência</h1>
         <br>
@@ -7,25 +7,35 @@
             <div class="row">
                 <div class="form-group col-md-5">
                     <label for="nm-banco">Nome: </label>
-                    <input type="nome" class="form-control" id="nm-banco" placeholder="Digite o Nome">
+                    <input type="nome" class="form-control" id="nm-banco" placeholder="Digite o Nome" ng-model="agencia.nm_agencia">
                 </div>
 
-                ​<div class="form-group col-md-2"></div>
+                <div class="form-group col-md-2"></div>
 
-                <div class="form-group col-md-5">
+                <div class="form-group col-md-4">
                     <label for="num-banco">Número: </label>
-                    <input type="numero" class="form-control" id="num-banco" placeholder="Digite o Número">
+                    <input type="numero" class="form-control" id="num-banco" placeholder="Digite o Número" ng-model="agencia.num_agencia">
                 </div>
             </div>
             <hr>
             <div class="row">
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary">Salvar</button>
-                    <a href="javascript:window.history.go(-1)" class="btn btn-default">Cancelar</a>
+                <div class="form-group col-md-4">
+                    <label for="nm-banco">Telefone: </label>
+                    <input type="nome" class="form-control" id="nm-banco" placeholder="Digite o Telefone" ng-model="agencia.tel_agencia">
+                </div>
+
+                <div class="form-group col-md-5">
+                    <label for="num-banco">Endereço: </label>
+                    <input type="numero" class="form-control" id="num-banco" placeholder="Digite o Endereço" ng-model="agencia.end_agencia">
+                </div>
+                
+                <div class="form-group col-md-2">
+                	<label for="nm-banco">Código do Banco: </label>
+                    <input type="nome" class="form-control" id="nm-banco" placeholder="Digite o Código do Banco" ng-model="agencia.fk_agencia_banco">
                 </div>
             </div>
-        </form>
-    </div>
+            <hr>
+            
     <div class="row">
                 <div class="col-md-12">
                     <button type="submit" href="#" data-toggle="modal" data-target="#confirma-modal" class="btn btn-primary">Salvar</button>

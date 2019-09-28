@@ -1,47 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <!-- Imports Bootstrap -->
-    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./bootstrap/css/style.css" rel="stylesheet">
-    ​
-    <!-- Imports Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
-    ​
-    <script src="./js/controller/main-controller.js"></script>
-    <script src="./js/controller/cad-banco-controller.js"></script>
-    ​
-    <meta charset="UTF-8">
-    <title>BanSys</title>
-</head>
-
-<body ng-controller="mainController">
-    ​
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/TCC-Entra21/">BanSys</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/TCC-Entra21/">In&iacute;cio</a></li>
-                    <li><a href="#">Ajuda</a></li>
-                    <li><a href="index.html">Sair</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <br>
-
     <div id="main" class="container-fluid">
         <br>
         <h3 class="page-header">Visualizar Banco</h3>
@@ -53,11 +9,11 @@
                 </div>
 
                 <div class="col-md-6">
-                    <p><strong>Número</strong></p>
+                    <p><strong>N�mero</strong></p>
                     <p>{{Valor do Campo}}</p>
                 </div>
                 <div class="col-md-6">
-                    <p><strong>Agência</strong></p>
+                    <p><strong>Ag�ncia</strong></p>
                     <p>{{Valor do Campo}}</p>
                 </div>
             </div>
@@ -72,6 +28,3 @@
             </form>
         </div>
     </div>
-</body>
-
-</html>

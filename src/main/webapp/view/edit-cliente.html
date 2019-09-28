@@ -5,23 +5,61 @@
         <form">
             <div class="row">
                 <div class="form-group col-md-5">
-                    <label for="nm-funcionario">Nome: </label>
-                    <input type="nome" class="form-control" id="nm-cliente" placeholder="Digite o Nome">
+                    <label for="nm-cliente">Nome: </label>
+                    <input type="nome" class="form-control" id="nm-cliente" placeholder="Digite o Nome" ng-model="cliente.nm_cliente">
                 </div>
 
-                ​<div class="form-group col-md-2"></div>
+                <div class="form-group col-md-2"></div>
 
                 <div class="form-group col-md-5">
-                    <label for="cpf-funcionario">CPF: </label>
-                    <input type="cpf" class="form-control" id="cpf-funcionario" placeholder="Digite o CPF">
+                    <label for="sobre-cliente">Sobrenome: </label>
+                    <input type="sobrenome" class="form-control" id="sobre-cliente" placeholder="Digite o Sobrenome" ng-model="cliente.sobre_cliente">
                 </div>
             </div>
-            ​
             <hr>
             <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="end-cliente">Endereco: </label>
+                    <input type="endereco" class="form-control" id="end-cliente" placeholder="Digite o Endere�o" ng-model="cliente.end_cliente">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="tel-cliente">Telefone: </label>
+                    <input type="numero" class="form-control" id="tel-cliente" placeholder="Digite o Telefone" ng-model="cliente.tel_cliente">
+                </div>
+                
+                <div class="form-group- col-md-2"></div>
+                
+                <div class="form-group col-md-3">
+                    <label for="cpf-cliente">CPF: </label>
+                    <input type="cpf" class="form-control" id="cpf-cliente" placeholder="Digite o CPF" ng-model="cliente.cpf_cliente">
+                </div>
+            </div>
+            <hr>
+             <div class="row">
                 <div class="form-group col-md-5">
-                    <label for="num-cliente">Número: </label>
-                    <input type="numero" class="form-control" id="num-cliente" placeholder="Digite o Número">
+                    <label for="cliente">Login: </label>
+                    <input type="login" class="form-control" id="login-cliente" placeholder="Digite o Login do Cliente" ng-model="cliente.login_cliente">
+                </div>
+
+                <div class="form-group col-md-2"></div>
+
+                <div class="form-group col-md-5">
+                    <label for="senha-cliente">Senha: </label>
+                    <input type="senha" class="form-control" id="senha-cliente" placeholder="Digite a Senha" ng-model="cliente.senha_cliente">
+                </div>
+            </div>
+            <hr>
+             <div class="row">
+                <div class="form-group col-md-5">
+                    <label for="email-cliente">Email: </label>
+                    <input type="email" class="form-control" id="email-cliente" placeholder="Digite o Email" ng-model="cliente.email_cliente">
+                </div>
+
+                <div class="form-group col-md-2"></div>
+
+                <div class="form-group col-md-5">
+                    <label for="fk-cliente-conta">Codigo da Conta: </label>
+                    <input type="fk" class="form-control" id="fk-cliente-conta" placeholder="Digite o C�digo da Conta do Cliente" ng-model="cliente.fk_cliente_conta">
                 </div>
             </div>
             <hr>
