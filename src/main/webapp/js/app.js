@@ -28,20 +28,10 @@ banSys.config(function($routeProvider, $locationProvider){
     .when("/dado-banco",{templateUrl:'view/consulta-banco.html', controller:'bancoController'})
     .when("/edit-banco",{templateUrl:'view/edit-banco.html', controller:'bancoController'})
     
+    .when("/",{templateUrl:'view/inicio.html', controller:'mainController'})
+        
      
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        
     .otherwise({redirectTo:'/'});
 	
 	  // enable html5Mode for pushstate ('#'-less URLs)
