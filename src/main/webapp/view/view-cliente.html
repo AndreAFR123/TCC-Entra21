@@ -1,67 +1,105 @@
+<div id="main" class="container-fluid">
+	<br>
+	<h3 class="page-header">Visualizar Cliente</h3>
+	<div id="actions" class="row">
+		<div class="row">
+			<div class="col-md-4">
+				<p>
+					<strong>Nome</strong>
+				</p>
+				<p>{{cliente.nm_cliente}}</p>
+			</div>
 
-    <div id="main" class="container-fluid">
-        <br>
-        <h3 class="page-header">Visualizar Cliente</h3>
-        <div id="actions" class="row">
-            <div class="row">
-                <div class="col-md-4">
-                    <p><strong>Nome</strong></p>
-                    <p>{{cliente.nm_cliente}}</p>
-                </div>
+			<div class="col-md-4">
+				<p>
+					<strong>Sobrenome</strong>
+				</p>
+				<p>{{cliente.sobre_cliente}}</p>
+			</div>
+			<div class="col-md-">
+				<p>
+					<strong>Endereco</strong>
+				</p>
+				<p>{{cliente.end_cliente}}</p>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-6">
+				<p>
+					<strong>Telefone</strong>
+				</p>
+				<p>{{cliente.tel_cliente}}</p>
+			</div>
 
-                <div class="col-md-4">
-                    <p><strong>Sobrenome</strong></p>
-                    <p>{{cliente.sobre_cliente}}</p>
-                </div>
-                <div class="col-md-">
-                    <p><strong>Endereco</strong></p>
-                    <p>{{cliente.end_cliente}}</p>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-6">
-                    <p><strong>Telefone</strong></p>
-                    <p>{{cliente.tel_cliente}}</p>
-                </div>
+			<div class="col-md-6">
+				<p>
+					<strong>CPF</strong>
+				</p>
+				<p>{{cliente.cpf_cliente}}</p>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-4">
+				<p>
+					<strong>Login</strong>
+				</p>
+				<p>{{cliente.login_cliente}}</p>
+			</div>
 
-                <div class="col-md-6">
-                    <p><strong>CPF</strong></p>
-                    <p>{{cliente.cpf_cliente}}</p>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-4">
-                    <p><strong>Login</strong></p>
-                    <p>{{cliente.login_cliente}}</p>
-                </div>
-
-                <div class="col-md-4">
-                    <p><strong>Senha</strong></p>
-                    <p>{{cliente.senha_cliente}}</p>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-6">
-                    <p><strong>Email</strong></p>
-                    <p>{{cliente.email_cliente}}</p>
-                </div>
-				<div class="col-md-2"></div>
-                <div class="col-md-2">
-                    <p><strong>ID Conta</strong></p>
-                    <p>{{cliente.fk_cliente_conta}}</p>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-12">
-                    <a href="index.html" class="btn btn-primary">Voltar</a>
-                    <a href="edit-cliente.html" class="btn btn-default">Editar</a>
-                    <a href="#" class="btn btn-default" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                </div>
-            </div>
-            </form>
-        </div>
-    </div>
+			<div class="col-md-4">
+				<p>
+					<strong>Senha</strong>
+				</p>
+				<p>{{cliente.senha_cliente}}</p>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-6">
+				<p>
+					<strong>Email</strong>
+				</p>
+				<p>{{cliente.email_cliente}}</p>
+			</div>
+			<div class="col-md-2"></div>
+			<div class="col-md-2">
+				<p>
+					<strong>ID Conta</strong>
+				</p>
+				<p>{{cliente.fk_cliente_conta}}</p>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-12">
+				<a href="index.html" class="btn btn-primary">Voltar</a> <a
+					href="edit-cliente" class="btn btn-default">Editar</a> <a href="#"
+					class="btn btn-default" data-toggle="modal"
+					data-target="#delete-modal">Excluir</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog"
+	aria-labelledby="modalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Fechar">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="modalLabel">Excluir</h4>
+			</div>
+			<div class="modal-body">Deseja realmente excluir o registro?</div>
+			<div class="modal-footer">
+				<button type="button" ng-click="deleteCliente(cliente.idCliente)"
+					class="btn btn-primary">Sim</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
+			</div>
+		</div>
+	</div>
+</div>
