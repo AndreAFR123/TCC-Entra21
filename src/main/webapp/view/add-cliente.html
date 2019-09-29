@@ -1,92 +1,112 @@
-      
-    <div class="container" >
-    
-        <h1>Cadastro Cliente</h1>
-        <br>
-        <form >
-            <div class="row">
-                <div class="form-group col-md-5">
-                    <label for="nm-cliente">Nome: </label>
-                    <input type="nome" class="form-control" id="nm-cliente" placeholder="Digite o Nome" ng-model="cliente.nm_cliente">
-                </div>
 
-                <div class="form-group col-md-2"></div>
+<div class="container">
 
-                <div class="form-group col-md-5">
-                    <label for="sobre-cliente">Sobrenome: </label>
-                    <input type="sobrenome" class="form-control" id="sobre-cliente" placeholder="Digite o Sobrenome" ng-model="cliente.sobre_cliente">
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="form-group col-md-4">
-                    <label for="end-cliente">Endereco: </label>
-                    <input type="endereco" class="form-control" id="end-cliente" placeholder="Digite o Endereço" ng-model="cliente.end_cliente">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="tel-cliente">Telefone: </label>
-                    <input type="numero" class="form-control" id="tel-cliente" placeholder="Digite o Telefone" ng-model="cliente.tel_cliente">
-                </div>
-                
-                <div class="form-group- col-md-2"></div>
-                
-                <div class="form-group col-md-3">
-                    <label for="cpf-cliente">CPF: </label>
-                    <input type="cpf" class="form-control" id="cpf-cliente" placeholder="Digite o CPF" ng-model="cliente.cpf_cliente">
-                </div>
-            </div>
-            <hr>
-             <div class="row">
-                <div class="form-group col-md-5">
-                    <label for="cliente">Login: </label>
-                    <input type="login" class="form-control" id="login-cliente" placeholder="Digite o Login do Cliente" ng-model="cliente.login_cliente">
-                </div>
+	<h1>Cadastro Cliente</h1>
+	<br>
+	<form>
+		<div class="row">
+			<div class="row">
+				<div class="form-group col-md-2">
+					<label for="inputID">ID</label> <input type="text"
+						class="form-control" id="inputID" readonly
+						ng-model="cliente.idcliente">
+				</div>
+				<div class="form-group col-md-5">
+					<label for="nm-cliente">Nome: </label> <input type="nome"
+						class="form-control" id="nm-cliente" placeholder="Digite o Nome"
+						ng-model="cliente.nm_cliente">
+				</div>
 
-                <div class="form-group col-md-2"></div>
+				<div class="form-group col-md-5">
+					<label for="sobre-cliente">Sobrenome: </label> <input
+						type="sobrenome" class="form-control" id="sobre-cliente"
+						placeholder="Digite o Sobrenome" ng-model="cliente.sobre_cliente">
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="end-cliente">Endereco: </label> <input type="endereco"
+						class="form-control" id="end-cliente"
+						placeholder="Digite o Endereço" ng-model="cliente.end_cliente">
+				</div>
+				<div class="form-group col-md-3">
+					<label for="tel-cliente">Telefone: </label> <input type="numero"
+						class="form-control" id="tel-cliente"
+						placeholder="Digite o Telefone" ng-model="cliente.tel_cliente">
+				</div>
 
-                <div class="form-group col-md-5">
-                    <label for="senha-cliente">Senha: </label>
-                    <input type="senha" class="form-control" id="senha-cliente" placeholder="Digite a Senha" ng-model="cliente.senha_cliente">
-                </div>
-            </div>
-            <hr>
-             <div class="row">
-                <div class="form-group col-md-5">
-                    <label for="email-cliente">Email: </label>
-                    <input type="email" class="form-control" id="email-cliente" placeholder="Digite o Email" ng-model="cliente.email_cliente">
-                </div>
+				<div class="form-group- col-md-2"></div>
 
-                <div class="form-group col-md-2"></div>
+				<div class="form-group col-md-3">
+					<label for="cpf-cliente">CPF: </label> <input type="cpf"
+						class="form-control" id="cpf-cliente" placeholder="Digite o CPF"
+						ng-model="cliente.cpf_cliente">
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="form-group col-md-5">
+					<label for="cliente">Login: </label> <input type="login"
+						class="form-control" id="login-cliente"
+						placeholder="Digite o Login do Cliente"
+						ng-model="cliente.login_cliente">
+				</div>
 
-                <div class="form-group col-md-5">
-                    <label for="fk-cliente-conta">Codigo da Conta: </label>
-                    <input type="fk" class="form-control" id="fk-cliente-conta" placeholder="Digite o Código da Conta do Cliente" ng-model="cliente.fk_cliente_conta">
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-12">
-                    <button type="submit"href="#" data-toggle="modal" data-target="#confirma-modal" class="btn btn-primary">Salvar</button>
-                    <a href="javascript:window.history.go(-1)" class="btn btn-default">Cancelar</a>
-                </div>
-            </div>
-        </form>
-    </div>
-    <!-- Modal -->
-<div class="modal fade" id="confirma-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="modalLabel">Salvar</h4>
-      </div>
-      <div class="modal-body">
-        Deseja realmente adicionar um novo cliente?
-      </div>
-      <div class="modal-footer">
-        <button type="button" ng-click="salvarCliente()" class="btn btn-primary">Sim</button>
-	<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
-      </div>
-    </div>
-  </div>
+				<div class="form-group col-md-2"></div>
+
+				<div class="form-group col-md-5">
+					<label for="senha-cliente">Senha: </label> <input type="senha"
+						class="form-control" id="senha-cliente"
+						placeholder="Digite a Senha" ng-model="cliente.senha_cliente">
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="form-group col-md-5">
+					<label for="email-cliente">Email: </label> <input type="email"
+						class="form-control" id="email-cliente"
+						placeholder="Digite o Email" ng-model="cliente.email_cliente">
+				</div>
+
+				<div class="form-group col-md-2"></div>
+
+				<div class="form-group col-md-5">
+					<label for="fk-cliente-conta">Codigo da Conta: </label> <input
+						type="fk" class="form-control" id="fk-cliente-conta"
+						placeholder="Digite o Código da Conta do Cliente"
+						ng-model="cliente.fk_cliente_conta">
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-12">
+					<button type="submit" href="#" data-toggle="modal"
+						data-target="#confirma-modal" class="btn btn-primary">Salvar</button>
+					<a href="javascript:window.history.go(-1)" class="btn btn-default">Cancelar</a>
+				</div>
+			</div>
+	</form>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="confirma-modal" tabindex="-1" role="dialog"
+	aria-labelledby="modalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Fechar">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="modalLabel">Salvar</h4>
+			</div>
+			<div class="modal-body">Deseja realmente adicionar um novo
+				cliente?</div>
+			<div class="modal-footer">
+				<button type="button" ng-click="salvarCliente()"
+					class="btn btn-primary">Sim</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
+			</div>
+		</div>
+	</div>
 </div>

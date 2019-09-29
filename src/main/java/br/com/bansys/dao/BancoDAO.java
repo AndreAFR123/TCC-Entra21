@@ -17,8 +17,6 @@ public class BancoDAO {
 	public BancoDAO() throws SQLException, ClassNotFoundException {
 		this.conexao = new ConexaoJDBC();
 	}
-	//private int idBanco;
-	//private String nm_banco;
 
 	public Long inserir(Banco banco) throws SQLException, ClassNotFoundException {
         Long id = null;
