@@ -22,13 +22,15 @@ import br.com.bansys.model.Cliente;
 @Path("clientes")
 public class ClienteController {
 	
+	private ClienteDAO clienteDAO;
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
 	public List<Cliente> listCliente() {
 		try {
-			ClienteDAO ClienteDAO = new ClienteDAO();
-			return ClienteDAO.listar();
+			clienteDAO= new ClienteDAO();
+			return clienteDAO.listar();
 		} catch (Exception ex) {
 			Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
@@ -40,8 +42,21 @@ public class ClienteController {
 	@Path("{id}/")
 	public Cliente getCliente(@PathParam("id") int id) {
 		try {
-			ClienteDAO ClienteDAO = new ClienteDAO();
-			return ClienteDAO.selecionar(id);
+			clienteDAO = new ClienteDAO();
+			return clienteDAO.selecionar(id);
+		} catch (Exception ex) {
+			Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+		}
+	}
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("extrato/cliente/{num_conta}/")
+	public Cliente getExtrato(@PathParam("num_conta") long num_conta) {
+		try {
+			clienteDAO = new ClienteDAO();
+			return clienteDAO.extrato(num_conta);
 		} catch (Exception ex) {
 			Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
@@ -49,23 +64,11 @@ public class ClienteController {
 	}
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("{num_conta}/")
-	public Cliente getExtrato(@PathParam("num_conta") int num_conta) {
+	@Path("consulta/{cpf_cliente}/")
+	public Cliente getConsulta( @PathParam("cpf_cliente") String cpf_cliente) {
 		try {
 			ClienteDAO ClienteDAO = new ClienteDAO();
-			return ClienteDAO.selecionar(num_conta);
-		} catch (Exception ex) {
-			Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null, ex);
-			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
-		}
-	}
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("{cpf_cliente}/")
-	public Cliente getConsulta(@PathParam("cpf_cliente") int cpf_cliente) {
-		try {
-			ClienteDAO ClienteDAO = new ClienteDAO();
-			return ClienteDAO.selecionar(cpf_cliente);
+			return ClienteDAO.consulta(cpf_cliente);
 		} catch (Exception ex) {
 			Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
@@ -77,8 +80,8 @@ public class ClienteController {
 	@Path("/")
 	public Response create(Cliente cliente) {
 		try {
-			ClienteDAO ClienteDAO = new ClienteDAO();
-			ClienteDAO.inserir(cliente);
+			clienteDAO = new ClienteDAO();
+			clienteDAO.inserir(cliente);
 
 			return Response.status(Response.Status.CREATED).build();
 		} catch (Exception ex) {
@@ -93,8 +96,8 @@ public class ClienteController {
 	public Response update(Cliente cliente) {
 		try {
 
-			ClienteDAO ClienteDAO = new ClienteDAO();
-			ClienteDAO.alterar(cliente);
+			clienteDAO = new ClienteDAO();
+			clienteDAO.alterar(cliente);
 			return Response.status(Response.Status.CREATED).build();
 		} catch (Exception ex) {
 			Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null, ex);
@@ -106,8 +109,8 @@ public class ClienteController {
 	@Path("{id}/")
 	public Response delete(@PathParam("id") int id) {
 		try {
-			ClienteDAO ClienteDAO = new ClienteDAO();
-			ClienteDAO.excluir(id);
+			clienteDAO = new ClienteDAO();
+			clienteDAO.excluir(id);
 			return Response.status(Response.Status.OK).build();
 		} catch (Exception ex) {
 			Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null, ex);
@@ -115,19 +118,18 @@ public class ClienteController {
 		}
 	}
 
-	@PUT
-	@Path("{id}/")
-	public Response concluir(@PathParam("id") int id) {
-		try {
-			ClienteDAO ClienteDAO = new ClienteDAO();
-
-			Cliente c = ClienteDAO.selecionar(id);
-
-			ClienteDAO.alterar(c);
-			return Response.status(Response.Status.ACCEPTED).build();
-		} catch (Exception ex) {
-			Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null, ex);
-			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
-		}
-	}
+	/*
+	 * @PUT
+	 * 
+	 * @Path("{id}/") public Response concluir(@PathParam("id") int id) { try {
+	 * ClienteDAO ClienteDAO = new ClienteDAO();
+	 * 
+	 * Cliente c = ClienteDAO.selecionar(id);
+	 * 
+	 * ClienteDAO.alterar(c); return
+	 * Response.status(Response.Status.ACCEPTED).build(); } catch (Exception ex) {
+	 * Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null,
+	 * ex); throw new
+	 * WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR); } }
+	 */
 }

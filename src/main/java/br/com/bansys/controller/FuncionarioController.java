@@ -22,72 +22,71 @@ import br.com.bansys.model.Funcionario;
 @Path("funcionarios")
 public class FuncionarioController {
 
-		@GET
-		@Produces(MediaType.APPLICATION_JSON)
-		@Path("/")
-		public List<Funcionario> listAgencia() {
-			try {
-				FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
-				return FuncionarioDAO.listar();
-			} catch (Exception ex) {
-				Logger.getLogger(FuncionarioController.class.getName()).log(Level.SEVERE, null, ex);
-				throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
-			}
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/")
+	public List<Funcionario> listAgencia() {
+		try {
+			FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
+			return FuncionarioDAO.listar();
+		} catch (Exception ex) {
+			Logger.getLogger(FuncionarioController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
+	}
 
-		@GET
-		@Produces(MediaType.APPLICATION_JSON)
-		@Path("{id}/")
-		public Funcionario getFuncionario(@PathParam("id") int id) {
-			try {
-				FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
-				return FuncionarioDAO.selecionar(id);
-			} catch (Exception ex) {
-				Logger.getLogger(FuncionarioController.class.getName()).log(Level.SEVERE, null, ex);
-				throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
-			}
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("{id}/")
+	public Funcionario getFuncionario(@PathParam("id") int id) {
+		try {
+			FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
+			return FuncionarioDAO.selecionar(id);
+		} catch (Exception ex) {
+			Logger.getLogger(FuncionarioController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
+	}
 
-		@POST
-		@Consumes(MediaType.APPLICATION_JSON)
-		@Path("/")
-		public Response create(Funcionario funcionario) {
-			try {
-				FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
-				FuncionarioDAO.inserir(funcionario);
-				return Response.status(Response.Status.CREATED).build();
-			} catch (Exception ex) {
-				Logger.getLogger(FuncionarioController.class.getName()).log(Level.SEVERE, null, ex);
-				throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
-			}
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/")
+	public Response create(Funcionario funcionario) {
+		try {
+			FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
+			FuncionarioDAO.inserir(funcionario);
+			return Response.status(Response.Status.CREATED).build();
+		} catch (Exception ex) {
+			Logger.getLogger(FuncionarioController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
+	}
 
-		@PUT
-		@Consumes(MediaType.APPLICATION_JSON)
-		@Path("/")
-		public Response update(Funcionario funcionario) {
-			try {
-				
+	@PUT
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/")
+	public Response update(Funcionario funcionario) {
+		try {
 
-				FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
-				FuncionarioDAO.alterar(funcionario);
-				return Response.status(Response.Status.OK).build();
-			} catch (Exception ex) {
-				Logger.getLogger(FuncionarioController.class.getName()).log(Level.SEVERE, null, ex);
-				throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
-			}
+			FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
+			FuncionarioDAO.alterar(funcionario);
+			return Response.status(Response.Status.OK).build();
+		} catch (Exception ex) {
+			Logger.getLogger(FuncionarioController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
+	}
 
-		@DELETE
-		@Path("{id}/")
-		public Response delete(@PathParam("id") int id) {
-			try {
-				FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
-				FuncionarioDAO.excluir(id);
-				return Response.status(Response.Status.OK).build();
-			} catch (Exception ex) {
-				Logger.getLogger(FuncionarioController.class.getName()).log(Level.SEVERE, null, ex);
-				throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
-			}
+	@DELETE
+	@Path("{id}/")
+	public Response delete(@PathParam("id") int id) {
+		try {
+			FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
+			FuncionarioDAO.excluir(id);
+			return Response.status(Response.Status.OK).build();
+		} catch (Exception ex) {
+			Logger.getLogger(FuncionarioController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
+	}
 }

@@ -49,30 +49,9 @@ public class ContaController {
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("{num_conta}/")
-	public Conta getConsulta(@PathParam("num_conta") int num_conta) {
-		try {
-			ContaDAO ContaDAO = new ContaDAO();
-			return ContaDAO.selecionar(num_conta);
-		} catch (Exception ex) {
-			Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
-			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
-		}
-	}
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("{num_conta}/")
-	public Conta getExtrato(@PathParam("num_conta") int num_conta) {
-		try {
-			ContaDAO ContaDAO = new ContaDAO();
-			return ContaDAO.selecionar(num_conta);
-		} catch (Exception ex) {
-			Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
-			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
-		}
-	}
+	
+	
+	
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
