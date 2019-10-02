@@ -2,61 +2,45 @@ banSys.controller("agenciaController", function($scope, $http) {
 
 	$scope.listaAgencia = [];
 	$scope.agencia= {};
-	var urlApi = 'localhost:8080/TCC-Entra21/rest/';
+	var url = 'rest/agencias/';
 
 	$scope.listaAgencia = function() {
 		$http({
 			method : 'GET',
-			url : urlApi + 'agencias/'
+			url : url
 		}).then(function(response) {
 			$scope.listaAgencia = response.data;
 		}, function(response) {
-			console.log('error');
+			console.log('error no metodo listar agencia');
 			console.log(response.data);
 			console.log(response.status);
 		});
 	};
 	
 	$scope.salvarAgencia = function() {
-		var metodo = 'POST';
-
-		if ($scope.agencia.id){
-			metodo = 'PUT';
-		}
-
 		$http({
-			method : metodo,
-			url : urlApi + 'agencias/',
+			method : 'POST',
+			url : url,
 			data : $scope.agencia
 		}).then(function(response) {
-			$scope.listaAgencia.push(response.data);
-			$scope.listaAgencia();
+			console.log('Agencia salva com sucesso.');
 		}, function(response) {
-			console.log('error do salvar');
-			console.log(response.data);
-			console.log(response.status);
+			console.log('Erro ao salvar metodo salvarAgencia ');
 		});
 	};
-	$scope.deleteConta = function(id) {
+	
+	$scope.deleteAgencia = function(id) {
 
 		$http({
 			method : 'DELETE',
-			url : urlApi + 'agencias/' + id
+			url : urlApi + id
 		}).then(function(response) {
+			console.log('Excluido com Sucesso metodo deleteAgencia')
 			$scope.listaAgencia.splice(id, 1);
 			$scope.listaAgencia();
 		}, function(response) {
-			console.log('error do delete');
+			console.log('error do deleteAgencia');
 			console.log(response.data);
 			console.log(response.status);
 		});
 	};
-	$scope.alterarAgencia = function(agencia) {
-		$scope.agencia = angular.copy(agencia);
-	}
-
-	$scope.cancelarAlteracaoAgencia = function(agencia) {
-		$scope.agencia = {};
-	};
-
-});

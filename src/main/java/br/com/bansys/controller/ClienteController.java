@@ -29,7 +29,7 @@ public class ClienteController {
 	@Path("/")
 	public List<Cliente> listCliente() {
 		try {
-			clienteDAO= new ClienteDAO();
+			clienteDAO = new ClienteDAO();
 			return clienteDAO.listar();
 		} catch (Exception ex) {
 			Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null, ex);

@@ -124,7 +124,7 @@ public class ClienteDAO {
 	}
 
 	public Cliente consulta(String cpf_cliente) throws SQLException, ClassNotFoundException {
-		String sqlQuery = "SELECT nm_cliente FROM cliente WHERE cpf_cliente = '?'";
+		String sqlQuery = "SELECT * FROM cliente WHERE cpf_cliente = ?";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);

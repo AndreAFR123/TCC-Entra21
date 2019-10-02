@@ -1,62 +1,46 @@
-banSys.controller("bancoController", function($scope, $http) {
+banSys.controller("bancoController", function($scope, $http, $routeParams) {
 
+	var url = 'rest/bancos/';
+	$scope.banco = {};
 	$scope.listaBanco = [];
-	$scope.banco= {};
-	var urlApi = 'localhost:8080/TCC-Entra21/rest/';
 
-	$scope.listaBanco = function() {
+	$scope.salvarBanco = function() {
 		$http({
-			method : 'GET',
-			url : urlApi + 'bancos/'
+			method : 'POST',
+			url : url,
+			data : $scope.banco
 		}).then(function(response) {
-			$scope.listaBanco = response.data;
+			console.log('Banco salvo com sucesso.');
 		}, function(response) {
-			console.log('error');
-			console.log(response.data);
-			console.log(response.status);
+			console.log('Erro ao salvar metodo salvarBanco ');
 		});
 	};
 	
-	$scope.salvarBanco = function() {
-		var metodo = 'POST';
-
-		if ($scope.banco.id){
-			metodo = 'PUT';
-		}
-
+	
+	$scope.listarBanco = function() {
 		$http({
-			method : metodo,
-			url : urlApi + 'bancos/',
-			data : $scope.banco
+			method : 'GET',
+			url : url
 		}).then(function(response) {
-			$scope.listaBanco.push(response.data);
-			$scope.listaBanco();
+			$scope.listaBanco = response.data;
 		}, function(response) {
-			console.log('error do salvar');
+			console.log('error no metodo listarBanco');
 			console.log(response.data);
 			console.log(response.status);
 		});
 	};
 	$scope.deleteBanco = function(id) {
-
-		$http({
-			method : 'DELETE',
-			url : urlApi + 'bancos/' + id
-		}).then(function(response) {
-			$scope.listaBanco.splice(id, 1);
-			$scope.listaBanco();
-		}, function(response) {
-			console.log('error do salvar');
-			console.log(response.data);
-			console.log(response.status);
-		});
-	};
-	$scope.alterarBanco = function(banco) {
-		$scope.banco = angular.copy(banco);
-	}
-
-	$scope.cancelarAlteracaoBanco = function(banco) {
-		$scope.banco = {};
-	};
-
+        $http({
+            method : 'DELETE',
+            url : urlApi + id
+        }).then(function(response) {
+            console.log('Excluido com Sucesso metodo deleteBanco')
+            $scope.listaBanco.splice(id, 1);
+            $scope.listaBanco();
+        }, function(response) {
+            console.log('error do deleteBanco');
+            console.log(response.data);
+            console.log(response.status);
+        });
+    };
 });

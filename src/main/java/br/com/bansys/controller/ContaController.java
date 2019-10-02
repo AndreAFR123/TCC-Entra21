@@ -17,16 +17,15 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import br.com.bansys.dao.ContaDAO;
-import br.com.bansys.model.Conta;
-;
+import br.com.bansys.model.Conta;;
 
 @Path("contas")
 public class ContaController {
-	
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	
+
 	public List<Conta> listConta() {
 		try {
 			ContaDAO ContaDAO = new ContaDAO();
@@ -36,7 +35,7 @@ public class ContaController {
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("{id}/")
@@ -49,10 +48,33 @@ public class ContaController {
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
-	
-	
-	
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("consulta/{num_conta}/")
+	public Conta getConsulta(@PathParam("num_conta") int num_conta) {
+		try {
+			ContaDAO ContaDAO = new ContaDAO();
+			return ContaDAO.consulta(num_conta);
+		} catch (Exception ex) {
+			Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+		}
+	}
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("extrato/{num_conta}/")
+	public Conta getExtrato(@PathParam("num_conta") int num_conta) {
+		try {
+			ContaDAO ContaDAO = new ContaDAO();
+			return ContaDAO.consulta(num_conta);
+		} catch (Exception ex) {
+			Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+		}
+	}
+
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
@@ -66,13 +88,12 @@ public class ContaController {
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
 	public Response update(Conta conta) {
 		try {
-			
 
 			ContaDAO ContaDAO = new ContaDAO();
 			ContaDAO.alterar(conta);
@@ -82,60 +103,65 @@ public class ContaController {
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
+
 	@PUT
-	   @Consumes(MediaType.APPLICATION_JSON)
-	   @Path("{id}/{saldo_conta}/{saldo}/{num}")
-	   public Response Transferencia(@PathParam("id") int id, @PathParam("saldo_conta")double saldo_conta, @PathParam("saldo")double saldo, @PathParam("num")int num) {
-	       try {
-	           ContaDAO ContaDAO = new ContaDAO();
-	           ContaDAO.Transferencia(saldo_conta, id, saldo, num);
-	           return Response.status(Response.Status.OK).build();
-	       } catch (Exception ex) {
-	           Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
-	           throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
-	       }
-	   }
-	   @PUT
-	   @Consumes(MediaType.APPLICATION_JSON)
-	   @Path("{id}/{saldo_conta}/{emprestimo_conta}")
-	   public Response Emprestimo(@PathParam("id") int id, @PathParam("saldo_conta") double saldo_conta, @PathParam("emprestimo_conta") double emprestimo_conta) {
-	       try {
-	           ContaDAO ContaDAO = new ContaDAO();
-	           ContaDAO.Emprestimo(saldo_conta,emprestimo_conta, id);
-	           return Response.status(Response.Status.OK).build();
-	       } catch (Exception ex) {
-	           Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
-	           throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
-	       }
-	   }
-	   @PUT
-	    @Consumes(MediaType.APPLICATION_JSON)
-	    @Path("saque/{id}/{saldo_conta}/")
-	    public Response saque(@PathParam("saldo_conta") double saldo_conta, @PathParam("id") int id) {
-	        try {
-	            ContaDAO ContaDAO = new ContaDAO();
-	            ContaDAO.Saque(saldo_conta, id);
-	            return Response.status(Response.Status.OK).build();
-	        } catch (Exception ex) {
-	            Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
-	            throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
-	        }
-	    }
-	   @PUT
-	    @Consumes(MediaType.APPLICATION_JSON)
-	    @Path("deposito/{id}/{saldo_conta}/")
-	    public Response deposito(@PathParam("saldo_conta") double saldo_conta, @PathParam("id") int id) {
-	        try {
-	            ContaDAO ContaDAO = new ContaDAO();
-	            ContaDAO.Deposito(saldo_conta, id);
-	            return Response.status(Response.Status.OK).build();
-	        } catch (Exception ex) {
-	            Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
-	            throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
-	        }
-	    }
-	
-	
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("{id}/{saldo_conta}/{saldo}/{num}")
+	public Response Transferencia(@PathParam("id") int id, @PathParam("saldo_conta") double saldo_conta,
+			@PathParam("saldo") double saldo, @PathParam("num") int num) {
+		try {
+			ContaDAO ContaDAO = new ContaDAO();
+			ContaDAO.Transferencia(saldo_conta, id, saldo, num);
+			return Response.status(Response.Status.OK).build();
+		} catch (Exception ex) {
+			Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+		}
+	}
+
+	@PUT
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("{id}/{saldo_conta}/{emprestimo_conta}")
+	public Response Emprestimo(@PathParam("id") int id, @PathParam("saldo_conta") double saldo_conta,
+			@PathParam("emprestimo_conta") double emprestimo_conta) {
+		try {
+			ContaDAO ContaDAO = new ContaDAO();
+			ContaDAO.Emprestimo(saldo_conta, emprestimo_conta, id);
+			return Response.status(Response.Status.OK).build();
+		} catch (Exception ex) {
+			Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+		}
+	}
+
+	@PUT
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("saque/{id}/{saldo_conta}/")
+	public Response saque(@PathParam("saldo_conta") double saldo_conta, @PathParam("id") int id) {
+		try {
+			ContaDAO ContaDAO = new ContaDAO();
+			ContaDAO.Saque(saldo_conta, id);
+			return Response.status(Response.Status.OK).build();
+		} catch (Exception ex) {
+			Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+		}
+	}
+
+	@PUT
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("deposito/{id}/{saldo_conta}/")
+	public Response deposito(@PathParam("saldo_conta") double saldo_conta, @PathParam("id") int id) {
+		try {
+			ContaDAO ContaDAO = new ContaDAO();
+			ContaDAO.Deposito(saldo_conta, id);
+			return Response.status(Response.Status.OK).build();
+		} catch (Exception ex) {
+			Logger.getLogger(ContaController.class.getName()).log(Level.SEVERE, null, ex);
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+		}
+	}
+
 	@DELETE
 	@Path("{id}/")
 	public Response delete(@PathParam("id") int id) {
@@ -148,8 +174,5 @@ public class ContaController {
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
-	
-	
 
 }

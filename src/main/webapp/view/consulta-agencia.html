@@ -1,15 +1,24 @@
-<br>
-<input type="text" ng-model="agencia.id_agencia" style="width:22px;">
-<input type="text" ng-model="agencia.nm_agencia">
-<input type="text" ng-model="agencia.num_agencia">
-<input type="button" value="Salvar" ng-click="salvarAgencia()">
-<input type="button" value="Desfazer" ng-click="cancelarAlteracaoAgencia()">
+<div id="top" class="row">
+	<div class="col-sm-3">
+		<h2>Agencias</h2>
+	</div>
+	<div class="col-sm-6">
 
-<br>
-<br>
-<input type="button" value="Pesquisar" ng-click="listarAgencia()">
-<br>
-<br>
+		<div class="input-group h2">
+			<input name="data[search]" class="form-control" ng-model="search" id="search" type="text"
+				placeholder="Pesquisar Itens">
+			<span class="input-group-btn">
+				<button class="btn btn-primary" type="submit" ng-click="listarAgencia()">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</span>
+		</div>
+
+	</div>
+	<div class="col-sm-3">
+		<a href="nova-agencia" class="btn btn-primary pull-right h2">Cadastrar</a>
+	</div>
+</div>
 <div id="list" class="row">
     <div class="table-responsive col-md-12">
         <table class="table table-striped" cellspacing="0" cellpadding="0">
@@ -25,19 +34,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="agencia in listaAgencia">
+                <tr ng-repeat="agencia in listaAgencia | filter: search">
                     <td>{{agencia.id_agencia}}</td>
                     <td>{{agencia.nm_agencia}}</td>
                     <td>{{agencia.num_agencia}}</td>
                     <td>{{agencia.tel_agencia}}</td>
                     <td>{{agencia.end_agencia}}</td>
                     <td>{{agencia.fk_agencia_banco}}</td>
-                    <td class="actions"><a class="btn btn-success btn-xs"
-                        href="agencias/{{agencia.id}}">Visualizar</a><a 
-                        class="btn btn-warning btn-xs" href="edit-agencia.html" 
-                        ng-click="alterarAgencia(agencia)">Editar</a><a 
-                        class="btn btn-danger btn-xs" href="#" data-toggle="modal"
-                        data-target="#delete-modal" ng-click="deleteAgencia(agencia.id)">Excluir</a>
+                    <td class="actions">
+                    	<a class="btn btn-success btn-xs" href="visualizar-agencia/{{agencia.id}}">Visualizar</a
+						<a class="btn btn-warning btn-xs" href="edit-agencia.html" ng-click="alterarAgencia(agencia)">Editar</a>
+                        <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal" ng-click="deleteAgencia(agencia.id)">Excluir</a>
                     </td>
                 </tr>
             </tbody>
