@@ -1,48 +1,82 @@
-<br>
-<input type="text" ng-model="conta.idConta" style="width:22px;">
-<input type="text" ng-model="conta.saldo_conta">
-<input type="text" ng-model="conta.limite_conta">
-<input type="text" ng-model="conta.tp_conta">
-<input type="text" ng-model="conta.num_conta">
-<input type="button" value="Salvar" ng-click="salvarConta()">
-<input type="button" value="Desfazer" ng-click="cancelarAlteracaoConta()">
+<div id="top" class="row">
+	<div class="col-sm-3">
+		<h2>Contas</h2>
+	</div>
+	<div class="col-sm-6">
 
-<br>
-<br>
-<input type="button" value="Pesquisar" ng-click="listarConta()">
-<br>
-<br>
+		<div class="input-group h2">
+			<input name="data[search]" class="form-control" ng-model="search" id="search" type="text"
+				placeholder="Pesquisar Itens">
+			<span class="input-group-btn">
+				<button class="btn btn-primary" type="submit" ng-click="listarConta()">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</span>
+		</div>
+
+	</div>
+	<div class="col-sm-3">
+		<a href="nova-conta" class="btn btn-primary pull-right h2">Cadastrar</a>
+	</div>
+</div> <!-- /#top -->
+
 <div id="list" class="row">
-    <div class="table-responsive col-md-12">
-        <table class="table table-striped" cellspacing="0" cellpadding="0">
-            <thead>
-                <tr>
-                    <th>ID</th>
+	<div class="table-responsive col-md-12">
+		<table class="table table-striped" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th>ID</th>
                     <th>Saldo</th>
                     <th>Limite</th>
                     <th>Tipo da Conta</th>
                     <th>Número</th>
                     <th>Emprestimo</th>
-                    <th class="actions">Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="conta in listaConta">
-                    <td>{{conta.idConta}}</td>
+					<th class="actions">Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="conta in listaConta| filter: search">
+					<td>{{conta.idConta}}</td>
                     <td>{{conta.saldo_conta}}</td>
                     <td>{{conta.limite_conta}}</td>
                     <td>{{conta.tp_conta}}</td>
                     <td>{{conta.num_conta}}</td>
-                    <td>{{conta.emprestimo_conta}}
-                    <td class="actions"><a class="btn btn-success btn-xs"
-                        href="conta/{{conta.idConta}}">Visualizar</a><a 
-                        class="btn btn-warning btn-xs" href="edit-conta.html" 
-                        ng-click="alterarConta(conta)">Editar</a><a 
-                        class="btn btn-danger btn-xs" href="#" data-toggle="modal"
-                        data-target="#delete-modal" ng-click="deleteConta(conta.idConta)">Excluir</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                    <td>{{conta.emprestimo_conta}}		
+									
+					
+					<td class="actions">
+							<a class="btn btn-success btn-xs" href="visualizar-conta/{{conta.idConta}}">Visualizar</a>
+							<a class="btn btn-warning btn-xs"href="edit-conta/{{conta.idConta}}" >Editar</a>
+							<a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal"
+							ng-click="deleteConta(conta.idConta)">Excluir</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -42,9 +42,10 @@
                     <td>{{agencia.end_agencia}}</td>
                     <td>{{agencia.fk_agencia_banco}}</td>
                     <td class="actions">
-                    	<a class="btn btn-success btn-xs" href="visualizar-agencia/{{agencia.id}}">Visualizar</a>
-						<a class="btn btn-warning btn-xs" href="edit-agencia.html" ng-click="alterarAgencia(agencia)">Editar</a>
-                        <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal" ng-click="deleteAgencia(agencia.id)">Excluir</a>
+
+                    	<a class="btn btn-success btn-xs" href="visualizar-agencia/{{agencia.id_agencia}}">Visualizar</a>
+						<a class="btn btn-warning btn-xs" href="edit-agencia/{{agencia.id_agencia}}" ng-click="editarAgencia()">Editar</a>
+                        <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal" ng-click="deleteAgencia(agencia.id_agencia)">Excluir</a>
                     </td>
                 </tr>
             </tbody>

@@ -11,7 +11,7 @@ banSys.config(function($routeProvider, $locationProvider){
     
     .when("/nova-conta",{templateUrl:'view/add-conta.html', controller:'contaController'})
     .when("/dado-conta",{templateUrl:'view/consulta-conta.html', controller:'contaController'})
-    .when("/edit-conta",{templateUrl:'view/edit-conta.html', controller:'contaVisualizarController'})
+    .when("/edit-conta/:id",{templateUrl:'view/edit-conta.html', controller:'contaVisualizarController'})
     .when("/visualizar-conta/:id",{templateUrl:'view/view-conta.html', controller:'contaVisualizarController'})
    
     .when("/novo-func",{templateUrl:'view/add-func.html', controller:'funcController'})
