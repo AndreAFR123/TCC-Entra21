@@ -4,6 +4,7 @@ banSys.config(function($routeProvider, $locationProvider){
     
 	$routeProvider
     .when("/extratos",{templateUrl:'view/extrato.html', controller:'contaController'})
+    .when("/saques",{templateUrl:'view/saque.html', controller:'contaController'})
     .when("/dados-contas",{templateUrl:'view/consulta-conta.html', controller:'contaController'})
     .when("/transferencias",{templateUrl:'view/transferencia.html', controller:'contaController'})
     .when("/depositos",{templateUrl:'view/deposito.html', controller:'contaController'})

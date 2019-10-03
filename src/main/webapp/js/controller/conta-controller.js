@@ -43,6 +43,22 @@ banSys.controller("contaController", function($scope, $http) {
 			console.log(response.status);
 		});
 	};
+	
+	$scope.transferenciaConta = function() {
+		$http({
+			method : 'PUT',
+			url : url + $scope.conta.idConta + '/' + $scope.conta.saldo_conta + '/' + $scope.conta.saldo_conta + '/' +  $scope.conta.num_conta 
+		}).then(function(response) {
+			$scope.listaConta.push(response.data);
+			
+		}, function(response) {
+			console.log('error da transferencia');
+			console.log(response.data);
+			console.log(response.status);
+		});
+	};
+	
+
 });
 	
 	
