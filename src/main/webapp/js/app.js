@@ -9,12 +9,15 @@ banSys.config(function($routeProvider, $locationProvider){
     .when("/depositos",{templateUrl:'view/deposito.html', controller:'contaController'})
     .when("/emprestimos",{templateUrl:'view/emprestimo.html', controller:'contaController'})
     
-    .when("/novas-contas",{templateUrl:'view/add-conta.html', controller:'contaController'})
-    .when("/edits-contas",{templateUrl:'view/edit-conta.html', controller:'contaController'})
+    .when("/nova-conta",{templateUrl:'view/add-conta.html', controller:'contaController'})
+    .when("/dado-conta",{templateUrl:'view/consulta-conta.html', controller:'contaController'})
+    .when("/edit-conta",{templateUrl:'view/edit-conta.html', controller:'contaVisualizarController'})
+    .when("/visualizar-conta/:id",{templateUrl:'view/view-conta.html', controller:'contaVisualizarController'})
    
     .when("/novo-func",{templateUrl:'view/add-func.html', controller:'funcController'})
     .when("/dado-func",{templateUrl:'view/consulta-func.html', controller:'funcController'})
-    .when("/edit-func",{templateUrl:'view/edit-func.html', controller:'funcController'})
+    .when("/edit-func/:id",{templateUrl:'view/edit-func.html', controller:'funcVisualizarController'})
+    .when("/visualizar-func/:id",{templateUrl:'view/view-func.html', controller:'funcVisualizarController'})
     
     .when("/novo-cliente",{templateUrl:'view/add-cliente.html', controller:'clienteController'})
     .when("/dado-cliente",{templateUrl:'view/consulta-cliente.html', controller:'clienteController'})
@@ -23,7 +26,8 @@ banSys.config(function($routeProvider, $locationProvider){
     
     .when("/nova-agencia",{templateUrl:'view/add-agencia.html', controller:'agenciaController'})
     .when("/dado-agencia",{templateUrl:'view/consulta-agencia.html', controller:'agenciaController'})
-    .when("/edit-agencia",{templateUrl:'view/edit-agencia.html', controller:'agenciaController'})
+    .when("/edit-agencia/:id",{templateUrl:'view/edit-agencia.html', controller:'agenciaVisualizarController'})
+    .when("/visualizar-agencia/:id",{templateUrl:'view/view-agencia.html', controller:'agenciaVisualizarController'})
     
     .when("/novo-banco",{templateUrl:'view/add-banco.html', controller:'bancoController'})
     .when("/dado-banco",{templateUrl:'view/consulta-banco.html', controller:'bancoController'})
