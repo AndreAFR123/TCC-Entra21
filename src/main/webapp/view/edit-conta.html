@@ -1,63 +1,44 @@
+<div class="container">
+	<h3 class="page-header">Editar Conta</h3>
 
+	<div class="row">
+		<div class="form-group col-md-2">
+			<label for="inputID">ID</label> <input type="text"
+				class="form-control" id="inputID" readonly ng-model="contaVisualizar.idConta">
+		</div>
+		<div class="form-group col-md-5">
+			<label for="saldo-conta">Saldo: </label> <input type="saldo"
+				class="form-control" id="saldo-conta" placeholder="Digite o Saldo"
+				ng-model="contaVisualizar.saldo_conta">
+		</div>
 
-    <div class="container">
-        <h1>Editar Conta</h1>
-        <br>
-        <form >
-            <div class="row">
-            <div class="form-group col-md-2">
-					<label for="inputID">ID</label> <input type="text"
-						class="form-control" id="inputID" readonly
-						ng-model="conta.idConta">
-				</div>
-                <div class="form-group col-md-5">
-                    <label for="saldo-conta">Saldo: </label>
-                    <input type="saldo" class="form-control" id="saldo-conta" placeholder="Digite o Saldo" ng-model="conta.saldo_conta">
-                </div>
+		<div class="form-group col-md-5">
+			<label for="num-banco">Limite: </label> <input type="numero"
+				class="form-control" id="num-banco" placeholder="Digite o Limite"
+				ng-model="contaVisualizar.limite_conta">
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="form-group col-md-5">
+			<label for="tp-conta">Tipo da Conta: </label> <input type="tipo"
+				class="form-control" id="tp-conta"
+				placeholder="Digite o Tipo da Conta" ng-model="contaVisualizar.tp_conta">
+		</div>
 
-                <div class="form-group col-md-5">
-                    <label for="num-banco">Limite: </label>
-                    <input type="numero" class="form-control" id="num-banco" placeholder="Digite o Limite" ng-model="conta.limite_conta">
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="form-group col-md-5">
-                    <label for="tp-conta">Tipo da Conta: </label>
-                    <input type="tipo" class="form-control" id="tp-conta" placeholder="Digite o Tipo da Conta" ng-model="conta.tp_conta">
-                </div>
+		<div class="form-group col-md-2"></div>
 
-                <div class="form-group col-md-2"></div>
-
-                <div class="form-group col-md-5">
-                    <label for="num-conta">Número: </label>
-                    <input type="numero" class="form-control" id="num-conta" placeholder="Digite o Número" ng-model="conta.num_conta">
-                </div>
-            </div>
-            <hr>
-           <div class="row">
-                <div class="col-md-12">
-                    <button type="submit" href="#" data-toggle="modal" data-target="#confirma-modal" class="btn btn-primary">Salvar</button>
-                    <a href="javascript:window.history.go(-1)" class="btn btn-default">Cancelar</a>
-                </div>
-            </div>
-        </form>
-    </div>
-    <!-- Modal -->
-<div class="modal fade" id="confirma-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="modalLabel">Salvar</h4>
-      </div>
-      <div class="modal-body">
-        Deseja realmente editar a conta?
-      </div>
-      <div class="modal-footer">
-        <button type="button" ng-click="salvarConta()" class="btn btn-primary">Sim</button>
-	<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
-      </div>
-    </div>
-  </div>
+		<div class="form-group col-md-5">
+			<label for="num-conta">N&uacute;mero: </label> <input type="numero"
+				class="form-control" id="num-conta" placeholder="Digite o Número"
+				ng-model="contaVisualizar.num_conta">
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-12">
+			<a href="/TCC-Entra21/dado-conta" class="btn btn-primary" ng-click="editarConta()">Salvar </a> 
+			<a href="/TCC-Entra21/dado-conta" class="btn btn-default">Cancelar</a>
+		</div>
+	</div>
 </div>
