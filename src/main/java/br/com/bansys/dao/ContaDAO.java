@@ -189,24 +189,6 @@ public class ContaDAO {
 
 		return null;
 	}
-	public Conta extrato(int num_conta) throws SQLException, ClassNotFoundException {
-		String sqlQuery = "SELECT * FROM conta WHERE num_conta= ?";
-
-		try {
-			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
-			stmt.setInt(1,	num_conta);
-			ResultSet rs = stmt.executeQuery();
-
-			if (rs.next()) {
-				return parser(rs);
-			}
-		} catch (SQLException e) {
-			throw e;
-		}
-
-		return null;
-	}
-
 	
 	public List<Conta> listar() throws SQLException, ClassNotFoundException {
 		String sqlQuery = "SELECT * FROM conta ORDER BY idConta";

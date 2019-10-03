@@ -9,7 +9,6 @@ import java.util.List;
 import br.com.bansys.data.ConexaoJDBC;
 import br.com.bansys.model.Cliente;
 
-
 public class ClienteDAO {
 
 	private final ConexaoJDBC conexao;
@@ -22,11 +21,7 @@ public class ClienteDAO {
 		Long id = null;
 		String sqlQuery = "INSERT INTO cliente (cpf_cliente, nm_cliente, sobre_cliente, end_cliente, tel_cliente, login_cliente, senha_cliente, email_cliente, fk_cliente_conta ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ";
 
-		
-		
-		
-		
-				try {
+		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
 			stmt.setString(1, cliente.getCpf_cliente());
 			stmt.setString(2, cliente.getNm_cliente());
@@ -109,12 +104,13 @@ public class ClienteDAO {
 
 		return null;
 	}
-	public Cliente extrato(int num_conta) throws SQLException, ClassNotFoundException {
+
+	public Cliente extrato(long num_conta) throws SQLException, ClassNotFoundException {
 		String sqlQuery = "SELECT * FROM cliente INNER JOIN conta ON idConta = fk_cliente_conta WHERE num_conta = ?";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
-			stmt.setInt(1, num_conta);
+			stmt.setLong(1, num_conta);
 			ResultSet rs = stmt.executeQuery();
 
 			if (rs.next()) {
@@ -126,12 +122,13 @@ public class ClienteDAO {
 
 		return null;
 	}
-	public Cliente consulta(int cpf_cliente) throws SQLException, ClassNotFoundException {
+
+	public Cliente consulta(String cpf_cliente) throws SQLException, ClassNotFoundException {
 		String sqlQuery = "SELECT * FROM cliente WHERE cpf_cliente = ?";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
-			stmt.setInt(1, cpf_cliente);
+			stmt.setString(1, cpf_cliente);
 			ResultSet rs = stmt.executeQuery();
 
 			if (rs.next()) {
@@ -165,7 +162,6 @@ public class ClienteDAO {
 
 	private Cliente parser(ResultSet resultSet) throws SQLException {
 		Cliente c = new Cliente();
-		
 
 		c.setIdcliente(resultSet.getInt("idcliente"));
 		c.setNm_cliente(resultSet.getString("nm_cliente"));
@@ -181,5 +177,3 @@ public class ClienteDAO {
 		return c;
 	}
 }
-
-

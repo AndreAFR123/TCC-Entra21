@@ -6,26 +6,27 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-
-
-
-	<script src="./angular-1.7.8/angular.min.js"></script>
-	<script src="./angular-1.7.8/angular-route.min.js"></script>
-	<script src="./js/app.js"></script>
-	<script src="./js/controller/main-controller.js"></script>
-
-	<script src="./js/controller/banco-controller.js"></script>
-	<script src="./js/controller/conta-controller.js"></script>
-	
-	<script src="./js/controller/func-controller.js"></script>
-	<script src="./js/controller/cliente-controller.js"></script>
-	<script src="./js/controller/agencia-controller.js"></script>
-	
 	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="./bootstrap/css/style.css" rel="stylesheet">
 	<script src="./bootstrap/js/jquery.min.js"></script>
 	<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- import angular-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+
+	<script src="./js/app.js"></script>
+	<script src="./js/controller/main-controller.js"></script>
+
+	<script src="./js/controller/banco-controller.js"></script>
+	<script src="./js/controller/banco-visualizar-controller.js"></script>
+	<script src="./js/controller/conta-controller.js"></script>
+
+	<script src="./js/controller/func-controller.js"></script>
+	<script src="./js/controller/cliente-controller.js"></script>
+	<script src="./js/controller/cliente-visualizar-controller.js"></script>
+	<script src="./js/controller/agencia-controller.js"></script>
+
 	<base href="/TCC-Entra21/">
 	<title>Funcionário</title>
 </head>
@@ -52,105 +53,90 @@
 				</button>
 				<a class="navbar-brand">
 					<img src="./images/Logo.png" class="img-responsive img" alt="BanSys">
-            </a>
-        </div>
-        <!-- Top Menu Items -->
-        <ul class=" nav navbar-right top-nav">
-					<li><a href="#" data-placement="bottom" data-toggle="tooltip" href="#"
-							data-original-title="Início"><i class="fa fa-bar-chart-o"></i>
-						</a>
+				</a>
+			</div>
+			<!-- Top Menu Items -->
+			<ul class=" nav navbar-right top-nav">
+				<li><a href="#" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Início"><i
+							class="fa fa-bar-chart-o"></i>
+					</a>
 
-					</li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuário <b
-								class="fa fa-angle-down"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="edit-func.html"><i class="fa fa-fw fa-user"></i> Editar Perfil </a></li>
-							<!-- fazer tela para editar senha -->
-							<!--<li><a href="#"><i class="fa fa-fw fa-cog"></i> Alterar Senha</a></li> -->
-							<li class="divider"></li>
-							<li><a href="#"><i class="fa fa-fw fa-power-off"></i> Sair</a></li>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuário <b
+							class="fa fa-angle-down"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="edit-func.html"><i class="fa fa-fw fa-user"></i> Editar Perfil </a></li>
+						<!-- fazer tela para editar senha -->
+						<!--<li><a href="#"><i class="fa fa-fw fa-cog"></i> Alterar Senha</a></li> -->
+						<li class="divider"></li>
+						<li><a href="#"><i class="fa fa-fw fa-power-off"></i> Sair</a></li>
+					</ul>
+				</li>
+
+			</ul>
+
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav side-nav">
+					<li>
+						<a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i>
+							Cliente <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+						<ul id="submenu-1" class="collapse">
+							<li><a href="novo-cliente"><i class="fa fa-angle-double-right"></i> Novo
+									Cliente</a></li>
+							<li><a href="dado-cliente"><i class="fa fa-angle-double-right"></i>Consulta
+									Cliente </a></li>
+							
 						</ul>
 					</li>
-
-					</ul>
-
-					<div class="collapse navbar-collapse navbar-ex1-collapse">
-						<ul class="nav navbar-nav side-nav">
-							<li>
-								<a href="#" data-toggle="collapse" data-target="#submenu-1"><i
-										class="fa fa-fw fa-search"></i> Cliente <i
-										class="fa fa-fw fa-angle-down pull-right"></i></a>
-								<ul id="submenu-1" class="collapse">
-									<li><a href="novo-cliente"><i class="fa fa-angle-double-right"></i> Novo
-											Cliente</a></li>
-									<li><a href="dado-cliente"><i class="fa fa-angle-double-right"></i>Consulta
-											Cliente </a></li>
-									<li><a href="edit-cliente"><i class="fa fa-angle-double-right"></i> Editar
-											Cliente</a></li>
-								</ul>
+					<li>
+						<a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-search"></i>
+							Conta <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+						<ul id="submenu-2" class="collapse">
+							<li><a href="extratos"><i class="fa fa-angle-double-right"></i> Extrato </a></li>
+							<li><a href="transferencias"><i class="fa fa-angle-double-right"></i>
+									Transferência</a></li>
+							<li><a href="emprestimos"><i class="fa fa-angle-double-right"></i>
+									Emprestimo</a></li>
+							<li><a href="depositos"><i class="fa fa-angle-double-right"></i> Depósito</a></li>
+							<li><a href="novas-contas"><i class="fa fa-angle-double-right"></i> Nova Conta</a>
 							</li>
-							<li>
-								<a href="#" data-toggle="collapse" data-target="#submenu-2"><i
-										class="fa fa-fw fa-search"></i> Conta <i
-										class="fa fa-fw fa-angle-down pull-right"></i></a>
-								<ul id="submenu-2" class="collapse">
-									<li><a href="extratos"><i class="fa fa-angle-double-right"></i> Extrato </a></li>
-									<li><a href="transferencias"><i class="fa fa-angle-double-right"></i>
-											Transferência</a></li>
-									<li><a href="emprestimos"><i class="fa fa-angle-double-right"></i>
-											Emprestimo</a></li>
-									<li><a href="depositos"><i class="fa fa-angle-double-right"></i> Depósito</a></li>
-									<li><a href="novas-contas"><i class="fa fa-angle-double-right"></i> Nova Conta</a>
-									</li>
-									<li><a href="dados-contas"><i class="fa fa-angle-double-right"></i>Consulta Conta
-									<li><a href="edits-contas"><i class="fa fa-angle-double-right"></i> Editar
-											Conta</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#" data-toggle="collapse" data-target="#submenu-3"><i
-										class="fa fa-fw fa-search"></i> Funcionário <i
-										class="fa fa-fw fa-angle-down pull-right"></i></a>
-								<ul id="submenu-3" class="collapse">
-									<li><a href="novo-func"><i class="fa fa-angle-double-right"></i> Novo
-											Funcionário</a></li>
-									<li><a href="dado-func"><i class="fa fa-angle-double-right"></i>Consulta
-											Funcionário </a></li>
-									<li><a href="edit-func"><i class="fa fa-angle-double-right"></i> Editar
-											Funcionário</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#" data-toggle="collapse" data-target="#submenu-4"><i
-										class="fa fa-fw fa-search"></i> Agência <i
-										class="fa fa-fw fa-angle-down pull-right"></i></a>
-								<ul id="submenu-4" class="collapse">
-									<li><a href="nova-agencia"><i class="fa fa-angle-double-right"></i> Nova
-											Agência</a></li>
-									<li><a href="dado-agencia"><i class="fa fa-angle-double-right"></i>Consulta
-											Agência </a></li>
-									<li><a href="edit-agencia"><i class="fa fa-angle-double-right"></i> Editar
-											Agência</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#" data-toggle="collapse" data-target="#submenu-5"><i
-										class="fa fa-fw fa-search"></i> Banco <i
-										class="fa fa-fw fa-angle-down pull-right"></i></a>
-								<ul id="submenu-5" class="collapse">
-									<li><a href="novo-banco"><i class="fa fa-angle-double-right"></i> Novo
-											Banco</a></li>
-									<li><a href="dado-banco"><i class="fa fa-angle-double-right"></i>Consulta
-											Banco </a></li>
-									<li><a href="edit-banco"><i class="fa fa-angle-double-right"></i> Editar
-											Banco</a></li>
-								</ul>
-							</li>
-
-
-
-					</div>
+							<li><a href="dados-contas"><i class="fa fa-angle-double-right"></i>Consulta Conta</a></li>
+							
+						</ul>
+					</li>
+					<li>
+						<a href="#" data-toggle="collapse" data-target="#submenu-3"><i class="fa fa-fw fa-search"></i>
+							Funcionário <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+						<ul id="submenu-3" class="collapse">
+							<li><a href="novo-func"><i class="fa fa-angle-double-right"></i> Novo
+									Funcionário</a></li>
+							<li><a href="dado-func"><i class="fa fa-angle-double-right"></i>Consulta
+									Funcionário </a></li>
+							
+						</ul>
+					</li>
+					<li>
+						<a href="#" data-toggle="collapse" data-target="#submenu-4"><i class="fa fa-fw fa-search"></i>
+							Agência <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+						<ul id="submenu-4" class="collapse">
+							<li><a href="nova-agencia"><i class="fa fa-angle-double-right"></i> Nova
+									Agência</a></li>
+							<li><a href="dado-agencia"><i class="fa fa-angle-double-right"></i>Consulta
+									Agência </a></li>
+							
+						</ul>
+					</li>
+					<li>
+						<a href="#" data-toggle="collapse" data-target="#submenu-5"><i class="fa fa-fw fa-search"></i>
+							Banco <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+						<ul id="submenu-5" class="collapse">
+							<li><a href="dado-banco"><i class="fa fa-angle-double-right"></i>Consultar </a></li>
+							<li><a href="novo-banco"><i class="fa fa-angle-double-right"></i>Novo</a></li>
+							
+						</ul>
+					</li>
+			</div>
 
 		</nav>
 
@@ -159,7 +145,7 @@
 				<!-- Page Heading -->
 				<div class="row" id="main">
 					<div class="col-sm-12 col-md-12 well" id="content" ng-view="ng-view"></div>
-					
+
 				</div>
 				<!-- /.row -->
 			</div>

@@ -1,67 +1,46 @@
-
 banSys.controller("clienteController", function($scope, $http) {
-
+	var url = 'rest/clientes/'
 	$scope.listaCliente = [];
-	$scope.cliente= {};
-	var urlApi = 'localhost:8080/TCC-Entra21/rest/';
+	$scope.cliente = {};
 
-	$scope.listaCliente = function() {
+	$scope.listarCliente = function() {
 		$http({
 			method : 'GET',
-			url : urlApi + 'clientes/'
+			url : url
 		}).then(function(response) {
 			$scope.listaCliente = response.data;
 		}, function(response) {
-			console.log('error');
+			console.log('error no metodo listarCliente');
 			console.log(response.data);
 			console.log(response.status);
 		});
 	};
-	
-	$scope.esconderImagem = function(){
-		document.getElementById('img-fundo').style.display = "none";
-		
-	}
+
 	$scope.salvarCliente = function() {
-		var metodo = 'POST';
-
-		if ($scope.cliente.id){
-			metodo = 'PUT';
-		}
-
 		$http({
-			method : metodo,
-			url : urlApi + 'clientes/',
+			method : 'POST',
+			url : url,
 			data : $scope.cliente
 		}).then(function(response) {
-			$scope.listaCliente.push(response.data);
-			$scope.listaCliente();
+			console.log('Cliente salvo com sucesso.');
 		}, function(response) {
-			console.log('error do salvar');
-			console.log(response.data);
-			console.log(response.status);
+			console.log('Erro ao salvar metodo salvarCliente ');
 		});
 	};
-	$scope.deleteCliente = function(id) {
 
+	$scope.deleteCliente = function(id) {
 		$http({
 			method : 'DELETE',
-			url : urlApi + 'clientes/' + id
+			url : url + id
 		}).then(function(response) {
+			console.log('Excluido com Sucesso metodo deleteCliente')
 			$scope.listaCliente.splice(id, 1);
 			$scope.listaCliente();
 		}, function(response) {
-			console.log('error do salvar');
+			console.log('error do deleteCliente');
 			console.log(response.data);
 			console.log(response.status);
 		});
-	};
-	$scope.alterarCliente = function(cliente) {
-		$scope.cliente = angular.copy(cliente);
-	}
-
-	$scope.cancelarAlteracaoCliente = function(cliente) {
-		$scope.cliente = {};
 	};
 
 });
