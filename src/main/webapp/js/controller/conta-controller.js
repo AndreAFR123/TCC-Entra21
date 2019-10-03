@@ -1,114 +1,49 @@
 banSys.controller("contaController", function($scope, $http) {
 
-	$scope.listaConta = [];
-	$scope.conta = {};
-	var urlApi = 'localhost:8080/TCC-Entra21/rest/';
+	var url = 'rest/contas/'
+		$scope.listaConta = [];
+		$scope.conta = {};
 
-	$scope.listaConta = function() {
-		$http({
-			method : 'GET',
-			url : urlApi + 'contas/'
-		}).then(function(response) {
-			$scope.listaConta = response.data;
-		}, function(response) {
-			console.log('error');
-			console.log(response.data);
-			console.log(response.status);
-		});
-	};
+		$scope.listarConta = function() {
+			$http({
+				method : 'GET',
+				url : url
+			}).then(function(response) {
+				$scope.listaConta = response.data;
+			}, function(response) {
+				console.log('error no metodo listarConta');
+				console.log(response.data);
+				console.log(response.status);
+			});
+		};
 	
-	$scope.salvarConta = function() {
-		var metodo = 'POST';
-
-		if ($scope.conta.id){
-			metodo = 'PUT';
-		}
-
-		$http({
-			method : metodo,
-			url : urlApi + 'contas/',
-			data : $scope.conta
-		}).then(function(response) {
-			$scope.listaConta.push(response.data);
-			$scope.listaConta();
-		}, function(response) {
-			console.log('error do salvar');
-			console.log(response.data);
-			console.log(response.status);
-		});
-	};
+		$scope.salvarConta = function() {
+			$http({
+				method : 'POST',
+				url : url,
+				data : $scope.conta
+			}).then(function(response) {
+				console.log('Conta salvo com sucesso.');
+			}, function(response) {
+				console.log('Erro ao salvar metodo salvarConta ');
+			});
+		};
+		
 	$scope.deleteConta = function(id) {
-
 		$http({
 			method : 'DELETE',
-			url : urlApi + 'contas/' + id + '/'
+			url : url + id
 		}).then(function(response) {
+			console.log('Excluido com Sucesso metodo deleteConta')
 			$scope.listaConta.splice(id, 1);
 			$scope.listaConta();
 		}, function(response) {
-			console.log('error do salvar');
-			console.log(response.data);
-			console.log(response.status);
-		});
-	};
-	$scope.alterarConta = function(conta) {
-		$scope.conta = angular.copy(conta);
-	}
-
-	$scope.cancelarAlteracaoConta = function(conta) {
-		$scope.conta = {};
-	};
-	
-	$scope.transferenciaConta = function() {
-		$http({
-			method : 'PUT',
-			url : urlApi + 'contas/'+ id + '/' + saldo_conta + '/' + saldo + '/' +  num + '/'
-		}).then(function(response) {
-			$scope.listaConta.push(response.data);
-			
-		}, function(response) {
-			console.log('error da transferencia');
-			console.log(response.data);
-			console.log(response.status);
-		});
-	};
-	
-	$scope.emprestimoConta = function() {
-		$http({
-			method : 'PUT',
-			url : urlApi + 'contas/' + id + '/' + saldo_conta + '/' + emprestimo_conta + '/'
-		}).then(function(response) {
-			$scope.listaConta.push(response.data);
-		}, function(response) {
-			console.log('error do emprestimo');
-			console.log(response.data);
-			console.log(response.status);
-		});
-	};
-	$scope.saqueConta = function() {
-		$http({
-			method : 'PUT',
-			url : urlApi + 'contas/saque/' + id + '/' + saldo_conta + '/'
-		}).then(function(response) {
-			$scope.listaConta.push(response.data);
-			$scope.listaConta();
-		}, function(response) {
-			console.log('error do saque');
-			console.log(response.data);
-			console.log(response.status);
-		});
-	};
-	
-	$scope.depositoConta = function() {
-		$http({
-			method : 'PUT',
-			url : urlApi + 'contas/deposito/' + id + '/' + saldo_conta + '/'
-		}).then(function(response) {
-			$scope.listaConta = response.data;
-		}, function(response) {
-			console.log('error do deposito');
+			console.log('error do deleteConta');
 			console.log(response.data);
 			console.log(response.status);
 		});
 	};
 });
+	
+	
+	

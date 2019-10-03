@@ -1,62 +1,49 @@
-<div id="main" class="container-fluid">
-	<br>
-	<h3 class="page-header">Visualizar Conta</h3>
-	<div id="actions" class="row">
-		<div class="row">
-			<div class="col-md-3">
-				<p>
-					<strong>Saldo</strong>
-				</p>
-				<p>{{conta.saldo_conta}}</p>
-			</div>
-			<div class="col-md-3">
-				<p>
-					<strong>Limite</strong>
-				</p>
-				<p>{{conta.limite_conta}}</p>
-			</div>
-			<div class="col-md-3">
-				<p>
-					<strong>Tipo da Conta</strong>
-				</p>
-				<p>{{conta.tp_conta}}</p>
-			</div>
+<h3 class="page-header">Visualizar Conta{{contaVisualizar.id}}</h3>
 
-			<div class="col-md-3">
-				<p>
-					<strong>Número</strong>
-				</p>
-				<p>{{conta.num_conta}}</p>
-			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<div class="col-md-12">
-				<a href="index.html" class="btn btn-primary">Voltar</a> <a
-					href="edit-conta.html" class="btn btn-default">Editar</a> <a
-					href="#" class="btn btn-default" data-toggle="modal"
-					data-target="#delete-modal">Excluir</a>
-			</div>
-		</div>
+<div class="row">
+	<div class="col-md-4">
+		<p>
+			<strong>ID</strong>
+		</p>
+		<p>{{contaVisualizar.idConta}}</p>
 	</div>
-	<!-- Modal -->
-	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog"
-		aria-labelledby="modalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Fechar">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title" id="modalLabel">Excluir</h4>
-				</div>
-				<div class="modal-body">Deseja realmente excluir o registro?</div>
-				<div class="modal-footer">
-					<button type="button" ng-click="deleteConta(conta.idConta)"
-						class="btn btn-primary">Sim</button>
-					<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
-				</div>
-			</div>
-		</div>
+	<div class="col-md-3">
+		<p>
+			<strong>Saldo</strong>
+		</p>
+		<p>{{contaVisualizar.saldo_conta}}</p>
 	</div>
+	<div class="col-md-3">
+		<p>
+			<strong>Limite</strong>
+		</p>
+		<p>{{contaVisualizar.limite_conta}}</p>
+	</div>
+	<div class="col-md-3">
+		<p>
+			<strong>Tipo da Conta</strong>
+		</p>
+		<p>{{contaVisualizar.tp_conta}}</p>
+	</div>
+
+	<div class="col-md-3">
+		<p>
+			<strong>Número</strong>
+		</p>
+		<p>{{contaVisualizar.num_conta}}</p>
+	</div>
+	<div class="col-md-3">
+		<p>
+			<strong>Emprestimo</strong>
+		</p>
+		<p>{{contaVisualizar.emprestimo_conta}}</p>
+	</div>
+</div>
+<hr>
+<div id="actions" class="row">
+	<div class="col-md-12">
+
+		<a href="/TCC-Entra21/dado-conta" class="btn btn-default">Fechar</a>
+	</div>
+</div>
+
