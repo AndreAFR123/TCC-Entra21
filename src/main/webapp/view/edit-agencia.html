@@ -1,77 +1,41 @@
-
-<meta charset="utf-8">
 <div class="container">
-	<h1>Editar Agência</h1>
-	<br>
-	<form>
+	<h3 class="page-header">Editar Ag&ecirc;ncia</h3>
 		<div class="row">
 			<div class="form-group col-md-2">
-				<label for="inputID">ID</label> <input type="text"
-					class="form-control" id="inputID" readonly
-					ng-model="agencia.id_agencia">
+				<label for="inputID">ID</label> 
+				<input type="text" class="form-control" id="inputID" readonly ng-model="agenciaVisualizar.id_agencia">
 			</div>
 			<div class="form-group col-md-5">
-				<label for="nm-banco">Nome: </label> <input type="nome"
-					class="form-control" id="nm-banco" placeholder="Digite o Nome"
-					ng-model="agencia.nm_agencia">
+				<label for="nm-agencia">Nome: </label> 
+				<input type="text"class="form-control" id="nm-agencia" placeholder="Digite o Nome"ng-model="agenciaVisualizar.nm_agencia">
 			</div>
-
 			<div class="form-group col-md-4">
-				<label for="num-banco">Número: </label> <input type="numero"
-					class="form-control" id="num-banco" placeholder="Digite o Número"
-					ng-model="agencia.num_agencia">
+				<label for="num-agencia">N&uacute;mero: </label>
+				<input type="text" class="form-control" id="num-agencia" placeholder="Digite o N&uacute;mero" ng-model="agenciaVisualizar.num_agencia">
 			</div>
 		</div>
-		<hr>
+		<hr />
 		<div class="row">
 			<div class="form-group col-md-4">
-				<label for="nm-banco">Telefone: </label> <input type="nome"
-					class="form-control" id="nm-banco" placeholder="Digite o Telefone"
-					ng-model="agencia.tel_agencia">
+				<label for="tel-agencia">Telefone: </label> 
+				<input type="text" class="form-control" id="tel-agencia" placeholder="Digite o Telefone" ng-model="agenciaVisualizar.tel_agencia">
 			</div>
 
 			<div class="form-group col-md-5">
-				<label for="num-banco">Endereço: </label> <input type="numero"
-					class="form-control" id="num-banco" placeholder="Digite o Endereço"
-					ng-model="agencia.end_agencia">
+				<label for="end-agencia">Endere&ccedil;o: </label> 
+				<input type="text" class="form-control" id="end-agencia" placeholder="Digite o Endere&ccedil;o" ng-model="agenciaVisualizar.end_agencia">
 			</div>
 
 			<div class="form-group col-md-2">
-				<label for="nm-banco">Código do Banco: </label> <input type="nome"
-					class="form-control" id="nm-banco"
-					placeholder="Digite o Código do Banco"
-					ng-model="agencia.fk_agencia_banco">
+				<label for="fk-agencia-banco">C&oacute;digo do Banco: </label> 
+				<input type="text" class="form-control" id="fk-agencia-banco" placeholder="Digite o C&oacute;digo do Banco" ng-model="agenciaVisualizar.fk_agencia_banco">
 			</div>
 		</div>
-		<hr>
-
+		<hr />
 		<div class="row">
-			<div class="col-md-12">
-				<button type="submit" href="#" data-toggle="modal"
-					data-target="#confirma-modal" class="btn btn-primary">Salvar</button>
-				<a href="javascript:window.history.go(-1)" class="btn btn-default">Cancelar</a>
-			</div>
-		</div>
-	</form>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="confirma-modal" tabindex="-1" role="dialog"
-	aria-labelledby="modalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal"
-					aria-label="Fechar">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				<h4 class="modal-title" id="modalLabel">Salvar</h4>
-			</div>
-			<div class="modal-body">Deseja realmente editar a agência?</div>
-			<div class="modal-footer">
-				<button type="button" ng-click="salvarAgencia()"
-					class="btn btn-primary">Sim</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
-			</div>
-		</div>
-	</div>
+	    <div class="col-md-12">
+			<a href="/TCC-Entra21/dado-agencia" class="btn btn-primary" ng-click="editarAgencia()" >Salvar </a>
+	        <a href="/TCC-Entra21/dado-agencia" class="btn btn-default">Cancelar</a>
+	    </div>
+	</div>	
 </div>

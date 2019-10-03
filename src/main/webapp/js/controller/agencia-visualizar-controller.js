@@ -1,4 +1,4 @@
-banSys.controller("AgenciaVisualizarController", function ($scope, $http, $routeParams) {
+banSys.controller("agenciaVisualizarController", function ($scope, $http, $routeParams) {
 
 	var url = 'rest/agencias/';
 	$scope.agenciaVisualizar = {};

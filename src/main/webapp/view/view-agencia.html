@@ -1,69 +1,28 @@
-
-<div id="main" class="container-fluid">
-	<br>
-	<h3 class="page-header">Visualizar Agência</h3>
-	<div id="actions" class="row">
+	<h3 class="page-header">Visualizar Ag&ecirc;ncia #{{agenciaVisualizar.id}}</h3>
 		<div class="row">
 			<div class="col-md-6">
-				<p>
-					<strong>Nome</strong>
-				</p>
-				<p>{{agencia.nm_agencia}}</p>
+				<p><strong>Nome</strong></p>
+				<p>{{agenciaVisualizar.nm_agencia}}</p>
 			</div>
-
 			<div class="col-md-6">
-				<p>
-					<strong>Número</strong>
-				</p>
-				<p>{{agencia.num_agencia}}</p>
+				<p><strong>N&uacute;mero</strong></p>
+				<p>{{agenciaVisualizar.num_agencia}}</p>
 			</div>
 		</div>
 		<hr>
 		<div class="row">
 			<div class="col-md-6">
-				<p>
-					<strong>Telefone</strong>
-				</p>
-				<p>{{agencia.tel_agencia}}</p>
+				<p><strong>Telefone</strong></p>
+				<p>{{agenciaVisualizar.tel_agencia}}</p>
 			</div>
-
 			<div class="col-md-6">
-				<p>
-					<strong>Endereco</strong>
-				</p>
-				<p>{{agencia.end_agencia}}</p>
+				<p><strong>Endere&ccedil;o</strong></p>
+				<p>{{agenciaVisualizar.end_agencia}}</p>
 			</div>
 		</div>
 		<hr>
-		<div class="row">
+		<div id="actions" class="row">
 			<div class="col-md-12">
-				<a href="index.html" class="btn btn-primary">Voltar</a> <a
-					href="edit-agencia" class="btn btn-default">Editar</a> <a href="#"
-					class="btn btn-default" data-toggle="modal"
-					data-target="#delete-modal">Excluir</a>
+				<a href="/TCC-Entra21/dado-agencia" class="btn btn-default">Fechar</a>
 			</div>
 		</div>
-		</form>
-	</div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog"
-	aria-labelledby="modalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal"
-					aria-label="Fechar">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				<h4 class="modal-title" id="modalLabel">Excluir</h4>
-			</div>
-			<div class="modal-body">Deseja realmente excluir o registro?</div>
-			<div class="modal-footer">
-				<button type="button" ng-click="deleteAgencia(agencia.id_agencia)"
-					class="btn btn-primary">Sim</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
-			</div>
-		</div>
-	</div>
-</div>

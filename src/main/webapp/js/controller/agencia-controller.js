@@ -1,10 +1,10 @@
-banSys.controller("agenciaController", function($scope, $http) {
+banSys.controller("agenciaController", function($scope, $http, $routeParams) {
 
 	$scope.listaAgencia = [];
 	$scope.agencia= {};
 	var url = 'rest/agencias/';
 
-	$scope.listaAgencia = function() {
+	$scope.listarAgencia = function() {
 		$http({
 			method : 'GET',
 			url : url
@@ -16,7 +16,7 @@ banSys.controller("agenciaController", function($scope, $http) {
 			console.log(response.status);
 		});
 	};
-	
+
 	$scope.salvarAgencia = function() {
 		$http({
 			method : 'POST',
@@ -33,7 +33,7 @@ banSys.controller("agenciaController", function($scope, $http) {
 
 		$http({
 			method : 'DELETE',
-			url : urlApi + id
+			url : url + id
 		}).then(function(response) {
 			console.log('Excluido com Sucesso metodo deleteAgencia')
 			$scope.listaAgencia.splice(id, 1);
@@ -44,3 +44,4 @@ banSys.controller("agenciaController", function($scope, $http) {
 			console.log(response.status);
 		});
 	};
+});
