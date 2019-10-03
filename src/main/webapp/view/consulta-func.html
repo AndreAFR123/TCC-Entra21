@@ -1,71 +1,72 @@
-<br>
-<input type="text" ng-model="funcionario.id_funcionario" style="width:22px;">
-<input type="text" ng-model="funcionario.nm_funcionario">
-<input type="text" ng-model="funcionario.sobre_funcionario">
-<input type="text" ng-model="funcionario.cpf_funcionario">
-<input type="text" ng-model="funcionario.end_funcionario">
-<input type="text" ng-model="funcionario.tel_funcionario">
-<input type="text" ng-model="funcionario.funcao_funcionario">
-<input type="text" ng-model="funcionario.sal_funcionario">
-<input type="text" ng-model="funcionario.cargah_funcionario">
-<input type="text" ng-model="funcionario.email_funcionario">
-<input type="text" ng-model="funcionario.login_funcionario">
-<input type="text" ng-model="funcionario.senha__funcionario">
-<input type="button" value="Salvar" ng-click="salvarFuncionario()">
-<input type="button" value="Desfazer" ng-click="cancelarAlteracaoFuncionario()">
+<div id="top" class="row">
+	<div class="col-sm-3">
+		<h2>Funcionarios</h2>
+	</div>
+	<div class="col-sm-6">
 
-<br>
-<br>
-<input type="button" value="Pesquisar" ng-click="listarFuncionario()">
-<br>
-<br>
+		<div class="input-group h2">
+			<input name="data[search]" class="form-control" ng-model="search" id="search" type="text"
+				placeholder="Pesquisar Itens">
+			<span class="input-group-btn">
+				<button class="btn btn-primary" type="submit" ng-click="listarFunc()">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</span>
+		</div>
+
+	</div>
+	<div class="col-sm-3">
+		<a href="novo-func" class="btn btn-primary pull-right h2">Cadastrar</a>
+	</div>
+</div> <!-- /#top -->
+
 <div id="list" class="row">
-    <div class="table-responsive col-md-12">
-        <table class="table table-striped" cellspacing="0" cellpadding="0">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Sobrenome</th>
-                    <th>CPF</th>
-                    <th>PIS</th>
-                    <th>Endereço</th>
-                    <th>Telefone</th>
-                    <th>Função</th>
-                    <th>Salário</th>
-                    <th>Carga Horária</th>
-                    <th>Email</th>
-                    <th>Login</th>
-                    <th>Senha</th>
-                    <th>ID Agencia</th>
-                    <th class="actions">Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="funcionario in listaFuncionario">
-                    <td>{{funcionario.id_agencia}}</td>
-                    <td>{{funcionario.nm_agencia}}</td>
-                    <td>{{funcionario.sobre_agencia}}</td>
-                    <td>{{funcionario.cpf_agencia}}</td>
-                    <td>{{funcionario.pis_funcionario}}</td>
-                    <td>{{funcionario.end_funcionario}}</td>
-                    <td>{{funcionario.tel_funcionario}}</td>
-                    <td>{{funcionario.funcao_funcionario}}</td>
-                    <td>{{funcionario.sal_funcionario}}</td>
-                    <td>{{funcionario.cargah_funcionario}}</td>
-                    <td>{{funcionario.email_funcionario}}</td>
-                    <td>{{funcionario.login_funcionario}}</td>
-                    <td>{{funcionario.senha_funcionario}}</td>
-                    <td>{{funcionario.fk_funcionario_agencia}}</td>
-                    <td class="actions"><a class="btn btn-success btn-xs"
-                        href="funcionario/{{funcionario.id_agencia}}">Visualizar</a><a 
-                        class="btn btn-warning btn-xs" href="edit-func.html" 
-                        ng-click="alterarFuncionario(funcionario)">Editar</a><a 
-                        class="btn btn-danger btn-xs" href="#" data-toggle="modal"
-                        data-target="#delete-modal" ng-click="deleteFuncionario(funcionario.id_agencia)">Excluir</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+	<div class="table-responsive col-md-12">
+		<table class="table table-striped" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th>Sobrenome</th>
+					<th>CPF</th>
+					<th>PIS</th>
+					<th>Endereço</th>
+					<th>Telefone</th>
+					<th>Função</th>
+					<th>Salário</th>
+					<th>Carga Horária</th>
+					<th>Email</th>
+					<th>Login</th>
+					<th>Senha</th>
+					<th>ID Agencia</th>
+					<th class="actions">Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="Func in listaFunc | filter: search">
+					<td>{{Func.id_funcionario}}</td>
+					<td>{{Func.nm_funcionario}}</td>
+					<td>{{Func.sobre_funcionario}}</td>
+					<td>{{Func.cpf_funcionario}}</td>
+					<td>{{Func.pis_funcionario}}</td>
+					<td>{{Func.end_funcionario}}</td>
+					<td>{{Func.tel_funcionario}}</td>
+					<td>{{Func.funcao_funcionario}}</td>
+					<td>{{Func.sal_funcionario}}</td>
+					<td>{{Func.cargah_funcionario}}</td>
+					<td>{{Func.email_funcionario}}</td>
+					<td>{{Func.login_funcionario}}</td>
+					<td>{{Func.senha_funcionario}}</td>
+					<td>{{Func.fk_funcionario_agencia}}</td>
+					<td class="actions"><a class="btn btn-success btn-xs"
+						href="visualizar-func/{{Func.id_funcionario}}">Visualizar</a><a
+						class="btn btn-warning btn-xs"
+						href="edit-func/{{Func.id_funcionario}}">Editar</a> <a
+						class="btn btn-danger btn-xs" href="#" data-toggle="modal"
+						data-target="#delete-modal"
+						ng-click="deleteFunc(Func.id_funcionario)">Excluir</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>

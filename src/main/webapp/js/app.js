@@ -40,7 +40,7 @@ banSys.config(function($routeProvider, $locationProvider){
         
     .otherwise({redirectTo:'/'});
 	
-	  // enable html5Mode for pushstate ('#'-less URLs)
+	// enable html5Mode for pushstate ('#'-less URLs)
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('!');
 	

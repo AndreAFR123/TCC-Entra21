@@ -1,36 +1,33 @@
-banSys.controller("funcController", function($scope, $http) {
+banSys.controller("funcController", function($scope, $http, $routeParams) {
 
 	$scope.listaFunc = [];
 	$scope.Func= {};
-	var urlApi = 'localhost:8080/TCC-Entra21/rest/';
+	var url = 'rest/funcionarios/';
 
-	$scope.listaFunc = function() {
+	$scope.listarFunc = function() {
 		$http({
 			method : 'GET',
-			url : urlApi + 'funcionarios/'
+			url : url
 		}).then(function(response) {
 			$scope.listaFunc = response.data;
+			console.log('Metodo listarFunc sucesso');
 		}, function(response) {
-			console.log('error');
+			console.log('error metodo listarFunc');
 			console.log(response.data);
 			console.log(response.status);
 		});
 	};
 	
 	$scope.salvarFunc = function() {
-		var metodo = 'POST';
-
-		if ($scope.func.id){
-			metodo = 'PUT';
-		}
 
 		$http({
-			method : metodo,
-			url : urlApi + 'funcionarios/',
-			data : $scope.func
+			method : 'POST',
+			url : url,
+			data : $scope.Func
 		}).then(function(response) {
+			console.log('Salvo com sucesso metodo salvarFunc');
 			$scope.listaFunc.push(response.data);
-			$scope.listaFunc();
+			$scope.listarFunc();
 		}, function(response) {
 			console.log('error do salvar');
 			console.log(response.data);
@@ -41,22 +38,15 @@ banSys.controller("funcController", function($scope, $http) {
 
 		$http({
 			method : 'DELETE',
-			url : urlApi + 'funcionarios/' + id
+			url : url + id
 		}).then(function(response) {
+			console.log('Deletado com Sucesso');
 			$scope.listaFunc.splice(id, 1);
-			$scope.listaFunc();
+			$scope.listarFunc();
 		}, function(response) {
 			console.log('error do delete');
 			console.log(response.data);
 			console.log(response.status);
 		});
 	};
-	$scope.alterarFunc = function(func) {
-		$scope.func = angular.copy(func);
-	}
-
-	$scope.cancelarAlteracaoFunc = function(func) {
-		$scope.func = {};
-	};	
-
 });

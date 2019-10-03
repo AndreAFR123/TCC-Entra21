@@ -22,6 +22,7 @@ banSys.controller("bancoController", function($scope, $http, $routeParams) {
 			method : 'GET',
 			url : url
 		}).then(function(response) {
+			console.log('Metodo listarBanco sucesso');
 			$scope.listaBanco = response.data;
 		}, function(response) {
 			console.log('error no metodo listarBanco');
