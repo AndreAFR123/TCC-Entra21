@@ -47,7 +47,7 @@ banSys.controller("bancoController", function($scope, $http, $routeParams) {
     $scope.transferenciaConta = function() {
 		$http({
 			method : 'PUT',
-			url : urlApi + 'contas/'+ id + '/' + saldo_conta + '/' + saldo + '/' +  num + '/'
+			url : urlApi +  $scope.conta.idConta + '/' +  $scope.conta.saldo_conta + '/' +  $scope.conta.saldo + '/' +   $scope.conta.num_conta
 		}).then(function(response) {
 			$scope.listaConta.push(response.data);
 			
@@ -61,7 +61,7 @@ banSys.controller("bancoController", function($scope, $http, $routeParams) {
 	$scope.emprestimoConta = function() {
 		$http({
 			method : 'PUT',
-			url : urlApi + 'contas/' + id + '/' + saldo_conta + '/' + emprestimo_conta + '/'
+			url : urlApi + 'contas/' + $scope.conta.idConta + '/' + $scope.conta.saldo_conta + '/' + $scope.conta.emprestimo_conta 
 		}).then(function(response) {
 			$scope.listaConta.push(response.data);
 		}, function(response) {
@@ -73,7 +73,7 @@ banSys.controller("bancoController", function($scope, $http, $routeParams) {
 	$scope.saqueConta = function() {
 		$http({
 			method : 'PUT',
-			url : urlApi + 'contas/saque/' + id + '/' + saldo_conta + '/'
+			url : urlApi + 'contas/saque/' + $scope.conta.idConta + '/' + $scope.conta.saldo_conta 
 		}).then(function(response) {
 			$scope.listaConta.push(response.data);
 			$scope.listaConta();
@@ -87,7 +87,7 @@ banSys.controller("bancoController", function($scope, $http, $routeParams) {
 	$scope.depositoConta = function() {
 		$http({
 			method : 'PUT',
-			url : urlApi + 'contas/deposito/' + id + '/' + saldo_conta + '/'
+			url : urlApi + 'contas/deposito/' + $scope.conta.idConta + '/' + $scope.conta.saldo_conta
 		}).then(function(response) {
 			$scope.listaConta = response.data;
 		}, function(response) {
@@ -98,4 +98,3 @@ banSys.controller("bancoController", function($scope, $http, $routeParams) {
 	};
 });
 
-});
