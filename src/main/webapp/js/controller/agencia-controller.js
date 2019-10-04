@@ -37,7 +37,7 @@ banSys.controller("agenciaController", function($scope, $http, $routeParams) {
 		}).then(function(response) {
 			console.log('Excluido com Sucesso metodo deleteAgencia')
 			$scope.listaAgencia.splice(id, 1);
-			$scope.listaAgencia();
+			$scope.listarAgencia();
 		}, function(response) {
 			console.log('error do deleteAgencia');
 			console.log(response.data);

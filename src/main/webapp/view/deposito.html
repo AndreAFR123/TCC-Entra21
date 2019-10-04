@@ -1,32 +1,22 @@
-<meta charset="utf-8">
- 
-	<div class="container" align="center">
-	<h3 class="page-header">Cadastro Ag&ecirc;ncia</h3>
-		
-			<div class="row">
-			<div class="form-group col-md-2">
-					<label for="inputID">ID</label> <input type="text"
-						class="form-control" id="inputID" 
-						ng-model="conta.idConta">
-				</div>
-			
-				
-
-				<div class="form-group col-md-4">
-					<label for="deposito">Valor do Depósito: </label> <input type="deposito"
-						class="form-control" id="deposito"
-						placeholder="Digite o Valor do Depósito" ng-model="conta.saldo_conta">
-
-				</div>
-				
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<button type="submit" style="margin-right: 40px;"
-						href="dado-conta" ng-click="saqueConta()" class="btn btn-primary">Confirma</button>
-					<a href="dado-conta" class="btn btn-default">Cancelar</a>
-				</div>
-				</div>
-		
-	</div>
-	
+<div class="container" align="center">
+    <h3 class="page-header">Dep&oacute;sito</h3>
+    <div class="row">
+        <div class="form-group col-md-2">
+            <label for="inputID">ID</label> <input type="text"
+                class="form-control" id="inputID" ng-model="conta.idConta">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="deposito">Valor do Dep&oacute;sito: </label> <input
+                type="deposito" class="form-control" id="deposito"
+                placeholder="Digite o Valor do Dep&oacute;sito"
+                ng-model="conta.saldo_conta">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/TCC-Entra21/dado-conta" class="btn btn-primary"
+                ng-click="depositoConta()">Confirmar</a>
+                <a href="dado-conta" class="btn btn-default">Cancelar</a>
+        </div>
+    </div>
+</div>

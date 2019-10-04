@@ -35,7 +35,7 @@ banSys.controller("clienteController", function($scope, $http) {
 		}).then(function(response) {
 			console.log('Excluido com Sucesso metodo deleteCliente')
 			$scope.listaCliente.splice(id, 1);
-			$scope.listaCliente();
+			$scope.listarCliente();
 		}, function(response) {
 			console.log('error do deleteCliente');
 			console.log(response.data);

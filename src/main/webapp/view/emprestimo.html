@@ -1,46 +1,26 @@
-<meta charset="utf-8">
-	<div class="container"  >
-		<form>
-			<div class="row">
-				
-				<div class="form-group col-md-4">
-					<label for="emprestimo">Valor do Empréstimo: </label> <input type="emprestimo"
-						class="form-control" id="emprestimo"
-						placeholder="Digite o Valor do empréstimo" ng-model="conta.saldo_conta">
-
-				</div>
-				<div class="form-group col-md-4">
-				<label for="num-conta">Número da Conta: </label> <input type="num-conta"
-						class="form-control" id="num-conta"
-						placeholder="Digite o número da conta" ng-model="conta.num_conta">
-						</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<button type="submit" style="margin-right: 40px;"
-						href="#" data-toggle="modal" data-target="#confirma2-modal" class="btn btn-primary">Confirma</button>
-					<a href="javascript:window.history.go(-1)" class="btn btn-default">Cancelar</a>
-				</div>
-				</div>
-		</form>
-	</div>
-	<!-- Modal -->
-<div class="modal fade" id="confirma2-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="modalLabel">Confirma</h4>
-      </div>
-      <div class="modal-body">
-        Deseja realmente fazer o emprestimo?
-      </div>
-      <div class="modal-footer">
-        <button type="button" ng-click="emprestimoConta()" class="btn btn-primary">Sim</button>
-	<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
-      </div>
+<div class="container">
+    <div class="row">
+        <div class="form-group col-md-2">
+            <label for="inputID">ID</label> <input type="text"
+                class="form-control" id="inputID"
+                ng-model="conta.idConta">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="num-conta">Saldo: </label> <input type="text"
+                class="form-control" id="num-conta"
+                placeholder="Digite o Saldo da Conta" ng-model="conta.saldo_conta">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="num-conta">Emprestimo da Conta: </label> <input
+                type="text" class="form-control" id="num-conta"
+                placeholder="Digite o Emprestimo" ng-model="conta.emprestimo_conta">
+        </div>
     </div>
-  </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="dado-conta" class="btn btn-primary"
+                ng-click="emprestimoConta()">Confirmar</a> <a href="dado-conta"
+                class="btn btn-default">Cancelar</a>
+        </div>
+    </div>
 </div>
-
- 

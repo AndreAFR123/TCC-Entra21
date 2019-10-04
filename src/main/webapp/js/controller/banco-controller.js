@@ -37,7 +37,7 @@ banSys.controller("bancoController", function($scope, $http, $routeParams) {
         }).then(function(response) {
             console.log('Excluido com Sucesso metodo deleteBanco')
             $scope.listaBanco.splice(id, 1);
-            $scope.listaBanco();
+            $scope.listarBanco();
         }, function(response) {
             console.log('error do deleteBanco');
             console.log(response.data);
