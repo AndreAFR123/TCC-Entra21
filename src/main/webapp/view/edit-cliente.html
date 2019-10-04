@@ -1,87 +1,93 @@
 <meta charset="utf-8">
 <div class="container">
 	<h3 class="page-header">Editar Cliente</h3>
-	
-		<div class="row">
-			<div class="form-group col-md-2">
-				<label for="inputID">ID</label> <input type="text"
-					class="form-control" id="inputID" readonly
-					ng-model="clienteVisualizar.idcliente">
-			</div>
-			<div class="form-group col-md-5">
-				<label for="inputNmCliente">Nome: </label> <input type="text"
-					class="form-control" id="inputNmCliente"
-					placeholder="Digite o Nome" ng-model="clienteVisualizar.nm_cliente">
-			</div>
 
-			<div class="form-group col-md-5">
-				<label for="iputSobreCliente">Sobrenome: </label> <input type="text"
-					class="form-control" id="iputSobreCliente"
-					placeholder="Digite o Sobrenome" ng-model="clienteVisualizar.sobre_cliente">
-			</div>
+	<div class="row">
+		<div class="form-group col-md-1">
+			<label for="inputID">ID</label> <input type="text"
+				class="form-control" id="inputID" readonly
+				ng-model="clienteVisualizar.idcliente">
 		</div>
-		<hr>
-		<div class="row">
-			<div class="form-group col-md-4">
-				<label for="inputEndCliente">Endereço: </label> <input type="text"
-					class="form-control" id="inputEndCliente"
-					placeholder="Digite o Endereço" ng-model="clienteVisualizar.end_cliente">
-			</div>
-			<div class="form-group col-md-3">
-				<label for="inputTelCliente">Telefone: </label> <input type="text"
-					class="form-control" id="inputTelCliente"
-					placeholder="Digite o Telefone" ng-model="clienteVisualizar.tel_cliente">
-			</div>
-
-			<div class="form-group- col-md-2"></div>
-
-			<div class="form-group col-md-3">
-				<label for="inputCpfCliente">CPF: </label> <input type="text"
-					class="form-control" id="inputCpfCliente"
-					placeholder="Digite o CPF" ng-model="clienteVisualizar.cpf_cliente">
-			</div>
+		<div class="form-group col-md-5">
+			<label for="inputNmCliente">Nome: </label> <input type="text"
+				class="form-control" id="inputNmCliente" placeholder="Digite o Nome"
+				ng-model="clienteVisualizar.nm_cliente">
 		</div>
-		<hr>
-		<div class="row">
-			<div class="form-group col-md-5">
-				<label for="inputLoginCliente">Login: </label> <input type="text"
-					class="form-control" id="inputLoginCliente"
-					placeholder="Digite o Login do Cliente"
-					ng-model="clienteVisualizar.login_cliente">
-			</div>
 
-			<div class="form-group col-md-2"></div>
-
-			<div class="form-group col-md-5">
-				<label for="inputSenhaCliente">Senha: </label> <input type="text"
-					class="form-control" id="inputSenhaCliente"
-					placeholder="Digite a Senha" ng-model="clienteVisualizar.senha_cliente">
-			</div>
+		<div class="form-group col-md-5">
+			<label for="iputSobreCliente">Sobrenome: </label> <input type="text"
+				class="form-control" id="iputSobreCliente"
+				placeholder="Digite o Sobrenome"
+				ng-model="clienteVisualizar.sobre_cliente">
 		</div>
-		<hr>
-		<div class="row">
-			<div class="form-group col-md-5">
-				<label for="inputEmailCliente">Email: </label> <input type="text"
-					class="form-control" id="inputEmailCliente"
-					placeholder="Digite o Email" ng-model="clienteVisualizar.email_cliente">
-			</div>
-
-			<div class="form-group col-md-2"></div>
-
-			<div class="form-group col-md-5">
-				<label for="inputFkClienteConta">Código da Conta: </label> <input
-					type="text" class="form-control" id="inputFkClienteConta"
-					placeholder="Digite o Código da Conta do Cliente"
-					ng-model="clienteVisualizar.fk_cliente_conta">
-			</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="form-group col-md-4">
+			<label for="inputEndCliente">Endereço: </label> <input type="text"
+				class="form-control" id="inputEndCliente"
+				placeholder="Digite o Endereço"
+				ng-model="clienteVisualizar.end_cliente">
 		</div>
-		<hr>
-		<div class="row">
-			<div class="col-md-12">
-			<a href="/TCC-Entra21/dado-cliente" class="btn btn-primary" ng-click="editarCliente()" >Salvar </a>
-	        <a href="/TCC-Entra21/dado-cliente" class="btn btn-default">Cancelar</a>
-	    </div>
+		<div class="form-group col-md-3">
+			<label for="inputTelCliente">Telefone: </label> <input type="text"
+				class="form-control" id="inputTelCliente"
+				placeholder="Digite o Telefone"
+				ng-model="clienteVisualizar.tel_cliente">
 		</div>
+
+
+
+		<div class="form-group col-md-3">
+			<label for="inputCpfCliente">CPF: </label> <input type="text"
+				class="form-control" id="inputCpfCliente" placeholder="Digite o CPF"
+				ng-model="clienteVisualizar.cpf_cliente">
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="form-group col-md-4">
+			<label for="inputLoginCliente">Login: </label> <input type="text"
+				class="form-control" id="inputLoginCliente"
+				placeholder="Digite o Login do Cliente"
+				ng-model="clienteVisualizar.login_cliente">
+		</div>
+
+		<div class="form-group col-md-2"></div>
+
+		<div class="form-group col-md-5">
+			<label for="inputSenhaCliente">Senha: </label> <input type="text"
+				class="form-control" id="inputSenhaCliente"
+				placeholder="Digite a Senha"
+				ng-model="clienteVisualizar.senha_cliente">
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="form-group col-md-5">
+			<label for="inputEmailCliente">Email: </label> <input type="text"
+				class="form-control" id="inputEmailCliente"
+				placeholder="Digite o Email"
+				ng-model="clienteVisualizar.email_cliente">
+		</div>
+
+		<div class="form-group col-md-2"></div>
+
+		<div class="form-group col-md-3">
+			<label for="inputFkClienteConta">Código da Conta: </label> <input
+				type="text" class="form-control" id="inputFkClienteConta"
+				placeholder="Digite o Código da Conta do Cliente"
+				ng-model="clienteVisualizar.fk_cliente_conta">
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-12">
+			<a href="/TCC-Entra21/dado-cliente" class="btn btn-primary"
+				ng-click="editarCliente()">Salvar </a> <a
+				href="/TCC-Entra21/dado-cliente" class="btn btn-default">Cancelar</a>
+		</div>
+	</div>
 
 </div>
 
