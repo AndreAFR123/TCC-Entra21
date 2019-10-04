@@ -14,7 +14,7 @@ public class ConexaoJDBC implements ConexaoJDBCMySQL{
 
 	private static final String PASSWORD = "123456";
 
-	private static final String DATABASE_URL = "jdbc:mysql://127.0.0.1:3306/bansys?useTimezone=true&serverTimezone=UTC";
+	private static final String DATABASE_URL = "jdbc:mysql://localhost:3307/bansys?useTimezone=true&serverTimezone=UTC";
 
 	public ConexaoJDBC() throws SQLException, ClassNotFoundException {
 		Class.forName("com.mysql.jdbc.Driver");
