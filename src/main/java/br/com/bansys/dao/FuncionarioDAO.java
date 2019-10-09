@@ -28,7 +28,7 @@ public class FuncionarioDAO {
 			stmt.setString(1, funcionario.getCpf_funcionario());
 			stmt.setString(2, funcionario.getNm_funcionario());
 			stmt.setString(3, funcionario.getSobre_funcionario());
-			stmt.setInt(4, funcionario.getPis_funcionario());
+			stmt.setString(4, funcionario.getPis_funcionario());
 			stmt.setString(5, funcionario.getEnd_funcionario());
 			stmt.setInt(6, funcionario.getTel_funcionario());
 			stmt.setString(7, funcionario.getFuncao_funcionario());
@@ -61,7 +61,7 @@ public class FuncionarioDAO {
 			stmt.setString(1, funcionario.getCpf_funcionario());
 			stmt.setString(2, funcionario.getNm_funcionario());
 			stmt.setString(3, funcionario.getSobre_funcionario());
-			stmt.setInt(4, funcionario.getPis_funcionario());
+			stmt.setString(4, funcionario.getPis_funcionario());
 			stmt.setString(5, funcionario.getEnd_funcionario());
 			stmt.setInt(6, funcionario.getTel_funcionario());
 			stmt.setString(7, funcionario.getFuncao_funcionario());
@@ -144,7 +144,7 @@ public class FuncionarioDAO {
 		f.setCpf_funcionario(resultSet.getString("cpf_funcionario"));
 		f.setNm_funcionario(resultSet.getString("nm_funcionario"));
 		f.setSobre_funcionario(resultSet.getString("sobre_funcionario"));
-		f.setPis_funcionario(resultSet.getInt("pis_funcionario"));
+		f.setPis_funcionario(resultSet.getString("pis_funcionario"));
 		f.setEnd_funcionario(resultSet.getString("end_funcionario"));
 		f.setTel_funcionario(resultSet.getInt("tel_funcionario"));
 		f.setFuncao_funcionario(resultSet.getString("funcao_funcionario"));

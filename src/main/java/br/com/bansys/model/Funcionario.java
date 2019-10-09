@@ -6,7 +6,7 @@ public class Funcionario {
 	private String cpf_funcionario;
 	private String nm_funcionario;
 	private String sobre_funcionario;
-	private int pis_funcionario;
+	private String pis_funcionario;
 	private String end_funcionario;
 	private int tel_funcionario;
 	private String funcao_funcionario;
@@ -49,11 +49,11 @@ public class Funcionario {
 		this.sobre_funcionario = sobre_funcionario;
 	}
 
-	public int getPis_funcionario() {
+	public String getPis_funcionario() {
 		return pis_funcionario;
 	}
 
-	public void setPis_funcionario(int pis_funcionario) {
+	public void setPis_funcionario(String pis_funcionario) {
 		this.pis_funcionario = pis_funcionario;
 	}
 
@@ -144,7 +144,6 @@ public class Funcionario {
 		result = prime * result + id_funcionario;
 		result = prime * result + ((login_funcionario == null) ? 0 : login_funcionario.hashCode());
 		result = prime * result + ((nm_funcionario == null) ? 0 : nm_funcionario.hashCode());
-		result = prime * result + pis_funcionario;
 		temp = Double.doubleToLongBits(sal_funcionario);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((senha_funcionario == null) ? 0 : senha_funcionario.hashCode());
