@@ -1,0 +1,78 @@
+CREATE TABLE banco (
+ idBanco int(11) NOT NULL AUTO_INCREMENT,
+ nm_banco varchar(45) NOT NULL,
+ PRIMARY KEY (idBanco),
+ UNIQUE KEY nm_banco (nm_banco),
+ UNIQUE KEY idBanco_UNIQUE (idBanco)
+) ;
+CREATE TABLE agencia (
+ id_agencia int(11) NOT NULL AUTO_INCREMENT,
+ nm_agencia varchar(45) NOT NULL,
+ num_agencia int(11) NOT NULL,
+ tel_agencia int(11) NOT NULL,
+ end_agencia varchar(100) NOT NULL,
+ fk_agencia_banco int(11) NOT NULL,
+ PRIMARY KEY (id_agencia),
+ UNIQUE KEY id_agencia (id_agencia),
+ UNIQUE KEY id_agencia_2 (id_agencia),
+ KEY fk_agencia_banco_idx (fk_agencia_banco),
+ CONSTRAINT fk_agencia_banco FOREIGN KEY (fk_agencia_banco) REFERENCES banco (idBanco) ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE funcionario (
+ id_funcionario int(11) NOT NULL AUTO_INCREMENT,
+ cpf_funcionario varchar(25) NOT NULL,
+ nm_funcionario varchar(50) NOT NULL,
+ sobre_funcionario varchar(50) NOT NULL,
+ pis_funcionario varchar(15) NOT NULL,
+ end_funcionario varchar(100) DEFAULT NULL,
+ tel_funcionario int(11) DEFAULT NULL,
+ funcao_funcionario varchar(50) NOT NULL,
+ sal_funcionario double NOT NULL,
+ cargah_funcionario double NOT NULL,
+ login_funcionario varchar(50) NOT NULL,
+ senha_funcionario varchar(50) NOT NULL,
+ email_funcionario varchar(150) DEFAULT NULL,
+ fk_funcionario_agencia int(11) NOT NULL,
+ PRIMARY KEY (id_funcionario),
+ UNIQUE KEY id_funcionario (id_funcionario),
+ UNIQUE KEY login_funcionario (login_funcionario),
+ KEY fk_funcionario_agencia_idx (fk_funcionario_agencia),
+ CONSTRAINT fk_funcionario_agencia FOREIGN KEY (fk_funcionario_agencia) REFERENCES agencia (id_agencia) ON DELETE CASCADE ON UPDATE CASCADE
+) ;
+CREATE TABLE conta (
+ idConta int(11) NOT NULL AUTO_INCREMENT,
+ num_conta int(11) NOT NULL,
+ saldo_conta double DEFAULT NULL,
+ limite_conta double DEFAULT NULL,
+ tp_conta varchar(50) NOT NULL,
+ emprestimo_conta double DEFAULT NULL,
+ PRIMARY KEY (idConta),
+ UNIQUE KEY idConta (idConta),
+ UNIQUE KEY num_conta (num_conta)
+) ;
+CREATE TABLE cliente (
+ idcliente int(11) NOT NULL AUTO_INCREMENT,
+ cpf_cliente varchar(25) NOT NULL,
+ nm_cliente varchar(50) NOT NULL,
+ sobre_cliente varchar(50) NOT NULL,
+ end_cliente varchar(150) DEFAULT NULL,
+ tel_cliente int(11) DEFAULT NULL,
+ login_cliente varchar(50) NOT NULL,
+ senha_cliente varchar(50) NOT NULL,
+ email_cliente varchar(150) DEFAULT NULL,
+ fk_cliente_conta int(11) NOT NULL,
+ PRIMARY KEY (idcliente),
+ UNIQUE KEY idcliente (idcliente),
+ UNIQUE KEY cpf_cliente (cpf_cliente),
+ UNIQUE KEY login_cliente (login_cliente),
+ KEY fk_cliente_conta_idx (fk_cliente_conta),
+ CONSTRAINT fk_cliente_conta FOREIGN KEY (fk_cliente_conta) REFERENCES conta (idConta) ON DELETE CASCADE ON UPDATE CASCADE
+) ;
+CREATE TABLE agencia_cliente (
+ fk_agencia int(11) NOT NULL,
+ fk_cliente int(11) NOT NULL,
+ PRIMARY KEY (fk_agencia,fk_cliente),
+ KEY fk_cliente_idx (fk_cliente),
+ CONSTRAINT fk_agencia FOREIGN KEY (fk_agencia) REFERENCES agencia (id_agencia) ON DELETE CASCADE ON UPDATE CASCADE,
+ CONSTRAINT fk_cliente FOREIGN KEY (fk_cliente) REFERENCES cliente (idcliente) ON DELETE CASCADE ON UPDATE CASCADE
+) ;

@@ -1,0 +1,41 @@
+INSERT INTO `bansys`.`banco` (`idBanco`, `nm_banco`) VALUES ('1', 'BanSystems');
+INSERT INTO `bansys`.`banco` (`idBanco`, `nm_banco`) VALUES ('2', 'BDalco');
+
+INSERT INTO `bansys`.`agencia` (`id_agencia`, `nm_agencia`, `num_agencia`, `tel_agencia`, `end_agencia`, `fk_agencia_banco`) VALUES ('1', 'BanSistems Vila Nova', '1', '33894182', 'Rua Fulvio luz 150 Vila Nova', '1');
+INSERT INTO `bansys`.`agencia` (`id_agencia`, `nm_agencia`, `num_agencia`, `tel_agencia`, `end_agencia`, `fk_agencia_banco`) VALUES ('2', 'BanSistemas Escola Agricola', '2', '33611245', 'Rua Edith Gartner 612 Escola Agricola', '1');
+INSERT INTO `bansys`.`agencia` (`id_agencia`, `nm_agencia`, `num_agencia`, `tel_agencia`, `end_agencia`, `fk_agencia_banco`) VALUES ('3', 'BDalcoSep', '1', '33239109', 'Rua 7 de Setembro Centro', '2');
+
+
+INSERT INTO `bansys`.`funcionario` (`id_funcionario`, `cpf_funcionario`, `nm_funcionario`, `sobre_funcionario`, `pis_funcionario`, `end_funcionario`, `tel_funcionario`, `funcao_funcionario`, `sal_funcionario`, `cargah_funcionario`, `login_funcionario`, `senha_funcionario`, `email_funcionario`, `fk_funcionario_agencia`) VALUES ('1', '890.258.912-17', 'Mauricio ', 'Cordeiro', '15567345511', 'Rua Faiza Merlith 135 ', '988010044', 'Gerente', '8.500', '60', 'Mauro', 'Mauro@!ei', 'mauricioibr@gmail.com', '1');
+INSERT INTO `bansys`.`funcionario` (`id_funcionario`, `cpf_funcionario`, `nm_funcionario`, `sobre_funcionario`, `pis_funcionario`, `end_funcionario`, `tel_funcionario`, `funcao_funcionario`, `sal_funcionario`, `cargah_funcionario`, `login_funcionario`, `senha_funcionario`, `email_funcionario`, `fk_funcionario_agencia`) VALUES ('2', '091.134.756-24', 'Anderson', 'Vieira', '23538015582', 'Rua 2 de Setembro', '998201232', 'Caixa', '2.254', '48', 'andersvi', 'AsMosqui12', 'andersonnopo@hotmail.com', '1');
+INSERT INTO `bansys`.`funcionario` (`id_funcionario`, `cpf_funcionario`, `nm_funcionario`, `sobre_funcionario`, `pis_funcionario`, `end_funcionario`, `tel_funcionario`, `funcao_funcionario`, `sal_funcionario`, `cargah_funcionario`, `login_funcionario`, `senha_funcionario`, `email_funcionario`, `fk_funcionario_agencia`) VALUES ('3', '672.291.642-22', 'Karin', 'Marciane', '67712390244', 'Rua Engater Mapo 12', '986154467', 'Caixa', '2.118', '48', 'Karinrin', 'KKM12!#$', 'Karinmari@gmail.com', '1');
+INSERT INTO `bansys`.`funcionario` (`id_funcionario`, `cpf_funcionario`, `nm_funcionario`, `sobre_funcionario`, `pis_funcionario`, `end_funcionario`, `tel_funcionario`, `funcao_funcionario`, `sal_funcionario`, `cargah_funcionario`, `login_funcionario`, `senha_funcionario`, `email_funcionario`, `fk_funcionario_agencia`) VALUES ('4', '336.412.577-12', 'Rafael', 'Egert Maiza', '12158142331', 'Rua General Efert 22 Velha', '984259901', 'Supervisor', '4.735', '56', 'Egerza', 'R!EL123', 'joaozin@outlook.com', '2');
+
+
+INSERT INTO `bansys`.`conta` (`idConta`, `num_conta`, `saldo_conta`, `limite_conta`, `tp_conta`, `emprestimo_conta`) VALUES ('1', '4223', '5000.12', '1000', 'Poupanca', '0');
+INSERT INTO `bansys`.`conta` (`idConta`, `num_conta`, `saldo_conta`, `limite_conta`, `tp_conta`, `emprestimo_conta`) VALUES ('2', '142', '-432.23', '1000', 'Corrente', '4500.00');
+INSERT INTO `bansys`.`conta` (`idConta`, `num_conta`, `saldo_conta`, `limite_conta`, `tp_conta`) VALUES ('3', '1542', '1298.10', '1000', 'Corrente');
+INSERT INTO `bansys`.`conta` (`idConta`, `num_conta`, `saldo_conta`, `limite_conta`, `tp_conta`) VALUES ('4', '15552', '402.00', '3000', 'Poupanca');
+INSERT INTO `bansys`.`conta` (`idConta`, `num_conta`, `saldo_conta`, `limite_conta`, `tp_conta`) VALUES ('5', '7234', '150000.00', '10000', 'Corrente');
+INSERT INTO `bansys`.`conta` (`idConta`, `num_conta`, `saldo_conta`, `limite_conta`, `tp_conta`, `emprestimo_conta`) VALUES ('6', '1715', '-1988.34', '2000', 'Corrente', '22000.00');
+INSERT INTO `bansys`.`conta` (`idConta`, `num_conta`, `saldo_conta`, `limite_conta`, `tp_conta`) VALUES ('7', '190', '1500.00', '6000', 'Corrente');
+INSERT INTO `bansys`.`conta` (`idConta`, `num_conta`, `saldo_conta`, `limite_conta`, `tp_conta`) VALUES ('8', '70', '12.41', '100', 'Poupanca');
+INSERT INTO `bansys`.`conta` (`idConta`, `num_conta`, `saldo_conta`, `limite_conta`, `tp_conta`) VALUES ('9', '1', '1.99', '500', 'Corrente');
+
+
+INSERT INTO `bansys`.`cliente` (`idcliente`, `cpf_cliente`, `nm_cliente`, `sobre_cliente`, `end_cliente`, `tel_cliente`, `login_cliente`, `senha_cliente`, `email_cliente`, `fk_cliente_conta`) VALUES ('1', '286.566.823-22', 'Luiz', 'Silva Rodrigues', 'Avenida Brasil Oeste, 1874', '97284353', 'luizaopqb', '1252@!12', 'luizbrpqb@hotmail.com', '3');
+INSERT INTO `bansys`.`cliente` (`idcliente`, `cpf_cliente`, `nm_cliente`, `sobre_cliente`, `end_cliente`, `tel_cliente`, `login_cliente`, `senha_cliente`, `email_cliente`, `fk_cliente_conta`) VALUES ('2', '427.867.030-34', 'Victor ', 'Barbosa Cunha', 'Travessa Carlos de Souza Rocha, 1664', '17713550', 'victera', '908@porta', 'victornaosoeu@gmail.com', '4');
+INSERT INTO `bansys`.`cliente` (`idcliente`, `cpf_cliente`, `nm_cliente`, `sobre_cliente`, `end_cliente`, `tel_cliente`, `login_cliente`, `senha_cliente`, `email_cliente`, `fk_cliente_conta`) VALUES ('3', '496.478.500-93', 'Julio  ', 'Carvalho', 'Rua Marco Antonio Correa Altafim, 223', '81452240', 'caravalhos', '08080@#$', 'juliomendonza@hotmail.com', '8');
+INSERT INTO `bansys`.`cliente` (`idcliente`, `cpf_cliente`, `nm_cliente`, `sobre_cliente`, `end_cliente`, `tel_cliente`, `login_cliente`, `senha_cliente`, `fk_cliente_conta`) VALUES ('4', '165.118.730-48', 'Gustavo', 'Lima Pereira', 'Rua Tiradentes, 700', '74959276', 'guslira', 'ekecer43Q!', '2');
+INSERT INTO `bansys`.`cliente` (`idcliente`, `cpf_cliente`, `nm_cliente`, `sobre_cliente`, `end_cliente`, `tel_cliente`, `login_cliente`, `senha_cliente`, `fk_cliente_conta`) VALUES ('5', '083.256.120-70', 'Otavio  ', 'Martins', 'Rua Itagi, 1579', '75654799', 'Ortins', '12345', '6');
+INSERT INTO `bansys`.`cliente` (`idcliente`, `cpf_cliente`, `nm_cliente`, `sobre_cliente`, `end_cliente`, `tel_cliente`, `login_cliente`, `senha_cliente`, `email_cliente`, `fk_cliente_conta`) VALUES ('6', '310.347.580-20', 'Diogo ', 'Ferreira Barros', 'Quadra QNP 26 Conjunto M, 1784', '76554304', 'Barroso', '!@poe$#', 'Otaviombr@gmail.com', '1');
+INSERT INTO `bansys`.`cliente` (`idcliente`, `cpf_cliente`, `nm_cliente`, `sobre_cliente`, `end_cliente`, `tel_cliente`, `login_cliente`, `senha_cliente`, `fk_cliente_conta`) VALUES ('7', '712.517.230-04', 'Rodrigo', ' Ribeiro', 'Rua Olegario Mariano, 1521', '88192998', 'Rodrigess', '!)@(fei', '9');
+
+
+INSERT INTO `bansys`.`agencia_cliente` (`fk_agencia`, `fk_cliente`) VALUES ('1', '2');
+INSERT INTO `bansys`.`agencia_cliente` (`fk_agencia`, `fk_cliente`) VALUES ('2', '1');
+INSERT INTO `bansys`.`agencia_cliente` (`fk_agencia`, `fk_cliente`) VALUES ('1', '3');
+INSERT INTO `bansys`.`agencia_cliente` (`fk_agencia`, `fk_cliente`) VALUES ('3', '5');
+INSERT INTO `bansys`.`agencia_cliente` (`fk_agencia`, `fk_cliente`) VALUES ('3', '6');
+INSERT INTO `bansys`.`agencia_cliente` (`fk_agencia`, `fk_cliente`) VALUES ('2', '4');
+INSERT INTO `bansys`.`agencia_cliente` (`fk_agencia`, `fk_cliente`) VALUES ('1', '7');
